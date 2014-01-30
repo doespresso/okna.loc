@@ -1,0 +1,131 @@
+.c1-block {
+  background-color: @c-main;
+  color: #fff;
+  a {
+    color: #fff;
+    &:hover {
+      color: fff
+    }
+  }
+}
+
+.c2-block {
+  background-color: @c-alter;
+  color: #fff;
+  a {
+    color: #fff;
+    &:hover {
+      color: fff
+    }
+  }
+.title>span{
+  background-color: @c-alter;
+  color:#fff;
+}
+}
+
+.g1-block {
+  background-color: @gray-light;
+  color: #fff;
+  a {
+    color: #fff;
+    &:hover {
+      color: fff
+    }
+  }
+}
+
+.w-block {
+  background-color: #fff;
+  a {
+
+  }
+}
+
+/////news element in list
+
+.news-item {
+  date {
+    font-weight: bold;
+    font-family: @f-main;
+    font-size: 22px;
+  }
+//  margin:0 @gap-small;
+  padding: @gap-base;
+  .title {
+    font-size: 12px;
+    font-weight: 200;
+    line-height: 1.5;
+  }
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &:hover {
+  }
+}
+
+
+
+////product element in scroll
+
+.product-item {
+  background-size: auto 80%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative; //  margin:0 @gap-small;
+  padding: @gap-base*1.4;
+  .title {
+    display: block;
+    font-weight: bold;
+    font-family: @f-main;
+    font-size: 22px;
+    margin-bottom: @gap-small;
+  }
+  .offer {
+    position: absolute;
+    left: @gap-base*1.4;;
+    bottom: @gap-small;
+    width: 100%;
+    display: block;
+    padding: 0 @gap-base 0 0;
+    div {
+      position: relative;
+      display: inline-block;
+      line-height: @gap-big;
+    }
+    .price {
+      font-weight: bold;
+      font-family: @f-main;
+      font-size: 24px;
+    }
+    sup {
+      font-weight: bold;
+      font-family: @f-main;
+      font-size: 11px; .opacity(0.5)}
+  }
+  .special-label {
+    position:absolute; bottom:@gap-big; left:0;
+    background-color: red;
+    padding: @gap-small @gap-base;
+  }
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &:hover {
+    .ribbon{
+      .animated;
+      .pulse;
+    }
+  }
+}
+
+/////news list in srcoll
+.news-list {
+  .news-item, .product-item {
+    min-height: 260px;
+  }
+}
