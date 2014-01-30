@@ -66,6 +66,7 @@ module.exports = function (grunt) {
             marionette:{files:{'assets/js/vendor/backbone/marionette.min.js':['dev/component/backbone.marionette/lib/backbone.marionette.js']}},
             snap_svg:{files:{'assets/js/vendor/snap.svg/snapsvg.min.js':['dev/component/Snap.svg/dist/snap.svg.js']}},
             swiper:{files:{'assets/js/vendor/swiper/swiper.min.js':['dev/component/swiper/dist/idangerous.swiper-2.4.js']}},
+            swiper_progress:{files:{'assets/js/vendor/swiper/swiper_progress.min.js':['dev/component/swiper/plugins/smooth-progress/idangerous.swiper.progress.js']}},
             switchery:{files:{'assets/js/vendor/switchery/switchery.min.js':['dev/component/switchery/dist/switchery.js']}},
 //            mmenu:{files:{'assets/js/vendor/mmenu/src/js/jquery.mmenu.min.all.js':['dev/component/jQuery.mmenu/src/js/jquery.mmenu.min.all.js']}},
         },

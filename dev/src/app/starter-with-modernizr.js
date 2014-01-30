@@ -870,6 +870,7 @@ yepnope([
 //            'marionette':'../assets/js/vendor/backbone/marionette.min.js',
             'bootstrap':'../assets/js/vendor/bootstrap/bootstrap.min.js',
             'swiper':'../assets/js/vendor/swiper/swiper.min.js',
+            'swiper_progress':'../assets/js/vendor/swiper/swiper_progress.min.js',
             'switchery':'../assets/js/vendor/switchery/switchery.min.js',
             'mmenu':'../dev/component/jQuery.mmenu/src/js/jquery.mmenu.min.all.js',
         },
@@ -910,6 +911,15 @@ yepnope([
                         console.log(fullslider.params);
                     }
                 });
+
+                $('#top-prev').on('click', function(e){
+                    e.preventDefault()
+                    fullslider.swipePrev()
+                  })
+                $('#top-next').on('click', function(e){
+                    e.preventDefault()
+                    fullslider.swipeNext()
+                  })
 
                 //////content tabs//////
                 var contenttabs = new Swiper('#home-section-catalog .swiper-container', {
