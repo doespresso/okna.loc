@@ -12,7 +12,7 @@
   position: relative;
   min-height: @navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
   margin-bottom: @navbar-margin-bottom;
-//  border: 1px solid transparent;
+  border: 1px solid;
 
   // Prevent floats from breaking the navbar
   .clearfix();
@@ -164,11 +164,11 @@
   margin-top:-1px;
   span {
     a {
-      color: @bar-logo-color;
-      background-color: @bar-logo-bg-color;
+      color: @navbar-logo-color;
+      background-color: @navbar-logo-bg-color;
       &:hover {
-        color: @bar-logo-color-hover;
-        background-color: @bar-logo-bg-color-hover;
+        color: @navbar-logo-color-hover;
+        background-color: @navbar-logo-bg-color-hover;
         text-decoration: none;
       }
     }
@@ -402,7 +402,9 @@
 // Default navbar
 .navbar-default {
   background-color: @navbar-default-bg;
-  border-color: @navbar-default-border;
+//  #gradient.vertical(@start-color: @navbar-default-bg; @end-color: lighten(@navbar-default-bg,5%); @start-percent: 0%; @end-percent: 100%);
+//  border-color: @navbar-default-border;
+  border-color: darken(@navbar-default-bg,10%);
 
   .navbar-brand {
     color: @navbar-default-brand-color;
@@ -414,7 +416,7 @@
   }
 
   .navbar-phone{
-    color:@navbar-tel-color;
+    tel{color:@navbar-tel-color;}
   }
 
   .navbar-text {

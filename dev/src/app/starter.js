@@ -33,7 +33,10 @@ yepnope([
             'mmenu':function (url, result, key) {
                 console.log("menu");
                 $('#menu').mmenu({
-                  zposition: "front",
+                    zposition:"front",
+                    header:true,
+                    searchfield:true,
+                    counters:true
                 });
             },
             'swiper':function () {

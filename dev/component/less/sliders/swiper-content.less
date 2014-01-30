@@ -13,31 +13,20 @@
     height: @swiper-h/2;
     position:absolute;
     left:0;
-    top:50%;
+    top:45%;
     display: block;
-//    padding-top:@swiper-content-padding;
-    .logo-image {
-      width: 100%;
-      max-width: 280px;
-      max-height: 100px;
-      min-height: 60px;
-      display: block;
-      background-image: url('../logo/zi_white.svg');
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
-
     .title {
       font-family: @swiper-title-font-family;
       font-size: @swiper-title-font-size/2;
       font-weight: @swiper-title-font-weight;
+      max-width: 50%;
       line-height: 1;
       @media (min-width: @grid-float-breakpoint) {
         font-size: @swiper-title-font-size;
       }
       &.centered{
+        max-width: 65%;
         text-align: center;
-        width: 60%;
         margin-left: auto;
         margin-right: auto;
       }
