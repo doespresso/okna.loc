@@ -12,7 +12,7 @@
   position: relative;
   min-height: @navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
   margin-bottom: @navbar-margin-bottom;
-  border: 1px solid;
+//  border: 1px solid;
 
   // Prevent floats from breaking the navbar
   .clearfix();
@@ -149,7 +149,6 @@
 
 .navbar-brand {
   float: left;
-  padding: ((@navbar-height - @navbar-logotext-font-size)/2) @navbar-padding-horizontal;
   font-size: @navbar-logotext-font-size;
   line-height: @navbar-logotext-font-size;
   font-weight:bold;
@@ -159,22 +158,48 @@
       margin-left: -@navbar-padding-horizontal;
     }
   }
+
 .logo {
-  margin-right:@gap-base;
-  margin-top:-1px;
-  span {
-    a {
-      color: @navbar-logo-color;
-      background-color: @navbar-logo-bg-color;
-      &:hover {
-        color: @navbar-logo-color-hover;
-        background-color: @navbar-logo-bg-color-hover;
-        text-decoration: none;
-      }
+  margin-right: @gap-base;
+  margin-top: -1px;
+  position: relative;
+  float: left;
+  padding: ((@navbar-height - @navbar-logotext-font-size)/2) @navbar-padding-horizontal;
+  a {
+    color: @navbar-logo-color;
+    background-color: @navbar-logo-bg-color;
+    display: block;
+    &:hover {
+      color: @navbar-logo-color-hover;
+      background-color: @navbar-logo-bg-color-hover;
+      text-decoration: none;
     }
   }
 }
+
+.logo-img {
+  margin-right: @gap-small;
+  position: relative;
+  float: left;
+  padding: ((@navbar-height - @navbar-logo-img-height)/2) @navbar-padding-horizontal;
+  a {
+    background-color: @navbar-logo-bg-color;
+    background-image: url(@navbar-logo-img-url);
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: contain;
+    width: @navbar-logo-img-width;
+    height: @navbar-logo-img-height;
+    display: block;
+    &:hover {
+      background-color: @navbar-logo-bg-color-hover;
+      text-decoration: none;
+    }
+  }
+
 }
+
+  }
 
 
 .navbar-phone {
@@ -193,6 +218,8 @@
     margin-right: @gap-base;
   }
 }
+
+
 
 // Navbar toggle
 //
@@ -397,6 +424,21 @@
   }
 }
 
+
+.navbar-icon, .navbar-nav>li>a.navbar-icon{
+  position: relative;
+  display: block;
+  font-size: @navbar-icon-size;
+  line-height: @navbar-icon-size;
+  height: @navbar-height;
+  padding: ((@navbar-height - @navbar-icon-size)/2) @gap-base;
+  text-decoration: none!important;
+//  #icon-embossed-small(@color:#fff;@bg:@c-main);
+  color:#fff!important;
+}
+
+
+
 // Alternate navbars
 // --------------------------------------------------
 
@@ -418,6 +460,7 @@
 
   .navbar-phone{
     tel{color:@navbar-tel-color;}
+//    #text-embossed-small(@color:#fff);
   }
 
   .navbar-text {

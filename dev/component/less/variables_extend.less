@@ -262,19 +262,26 @@
 @navbar-font-size:14px;
 @navbar-line-height:@navbar-font-size;
 //////////// LOGO
-@navbar-logotext-font-size:18px;
+@navbar-logotext-font-size:14px;
 @navbar-bg-color:#fff; //bar background
-@navbar-logo-c:#000;
+@navbar-logo-c:#fff;
 @navbar-logo-color:rgba(red(@navbar-logo-c),green(@navbar-logo-c),blue(@navbar-logo-c),1); //logo color
 @navbar-logo-bg-color:transparent; //logo background
 @navbar-logo-color-hover:rgba(red(@navbar-logo-c),green(@navbar-logo-c),blue(@navbar-logo-c),1); //logo H color
 @navbar-logo-bg-color-hover:transparent; //logo H background
+
+@navbar-logo-img-width:40px;
+@navbar-logo-img-height:30px;
+@navbar-logo-img-url:"/assets/logo/white.svg";
+
 /////////// PHONE
 @navbar-tel-font-size:16px;
-@navbar-tel-color:#fff;
+@navbar-tel-color:#000;
 ///////////TOGGLE
 @navbar-default-toggle-border-color:#fff;
 @navbar-default-toggle-hover-bg:transparent;
+//////////ICONS
+@navbar-icon-size:32px;
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -286,12 +293,12 @@
 @navbar-padding-horizontal:        0;//floor(@grid-gutter-width / 2);
 @navbar-padding-vertical:          ((@navbar-height - @navbar-line-height) / 2);
 
-@navbar-default-color:             #000;
+@navbar-default-color:             #fff;
 @navbar-default-bg: @c-main;
 @navbar-default-border:            darken(@navbar-default-bg, 2%);
 
 // Navbar links
-@navbar-default-link-color:                #fff;
+@navbar-default-link-color:                #000;
 @navbar-default-link-hover-color:          #000;
 @navbar-default-link-hover-bg:             darken(@navbar-default-bg,2%);
 @navbar-default-link-active-color:         #000;
@@ -309,7 +316,7 @@
 @navbar-default-toggle-icon-bar-bg:        #ccc;
 @navbar-default-toggle-border-color:       #ddd;
 
-@navbar-tel-color:@gray-dark;
+
 
 
 ///////////////////////////////////////////////////////////////////////////////////// Inverted navbar
