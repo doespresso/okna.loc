@@ -190,13 +190,18 @@
     background-size: contain;
     width: @navbar-logo-img-width;
     height: @navbar-logo-img-height;
+    color:@navbar-logo-color;
     display: block;
+    .logo-icon{
+      line-height: @navbar-logo-img-height;
+      font-size: @navbar-logo-img-height;
+      #icon-embossed-small(@color:#fff; @bg:@c-main);
+    }
     &:hover {
       background-color: @navbar-logo-bg-color-hover;
       text-decoration: none;
     }
   }
-
 }
 
   }
