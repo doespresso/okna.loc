@@ -28,13 +28,13 @@
 // -------------------------
 
 @body-bg:               #fff;
-@text-color:            @gray-dark;
+@text-color:            @gray;
 
 // Links
 // -------------------------
 
-@link-color:            @brand-primary;
-@link-hover-color:      @c-alter;//darken(@link-color, 15%);
+@link-color:            #222;
+@link-hover-color:      #222;//darken(@link-color, 15%);
 
 // Typography
 // -------------------------
@@ -44,7 +44,7 @@
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
 
-@font-size-base:          14px;
+@font-size-base:          12px;
 @font-size-large:         ceil(@font-size-base * 1.25); // ~18px
 @font-size-small:         ceil(@font-size-base * 0.85); // ~12px
 
@@ -259,8 +259,7 @@
 // Navbar
 // -------------------------
 /////////////
-@navbar-font-size:14px;
-@navbar-line-height:@navbar-font-size;
+
 //////////// LOGO
 @navbar-logotext-font-size:14px;
 @navbar-bg-color:#fff; //bar background
@@ -281,13 +280,17 @@
 @navbar-default-toggle-border-color:#fff;
 @navbar-default-toggle-hover-bg:transparent;
 //////////ICONS
-@navbar-icon-size:32px;
+@navbar-icon-size:30px;
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Basics of a navbar
-@navbar-height:                    70px;
+@navbar-font-size:14px;
+@navbar-height:                    60px;
+@navbar-line-height:@navbar-font-size;
+
+
 @navbar-margin-bottom:             0;//@line-height-computed;
 @navbar-border-radius:             0;//@border-radius-base;
 @navbar-padding-horizontal:        0;//floor(@grid-gutter-width / 2);

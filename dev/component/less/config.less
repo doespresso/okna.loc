@@ -8,27 +8,19 @@
 @body-bg-color:#f8f8f8;
 @body-color:#777;
 
-@c-main: #ffcb34;
+
+@c-main: #FC0;
 @c-alter: #623D7E;
 @c-second:#34495e;
 
+@article-font-size:1.15em;
+
+@c-h1:@gray-dark;//lighten(@body-color,10%);
 
 ////paddings
 @gap-small:10px;
 @gap-base:20px;
 @gap-big:@gap-base*2;
-
-
-
-
-////bar NAV
-@bar-top-nav-font-size:14px;
-@bar-top-nav-line-height:@bar-top-nav-font-size;
-
-////top bar
-@bar-top-height:(@gap-base + 5px)*2 + @bar-top-nav-line-height;
-@bar-top-color:#fff;
-@bar-top-bg-color:@c-alter;
 
 ////logotype in bar
 @logo-font-size:22px;
@@ -38,96 +30,34 @@
 @tel2-font-size:12px;
 @tel2-font-weight:bold;
 
-
-  
-.get_bar_standart{
- @bar-bg-color:#fff; //bar background
- @bar-logo-c:#000;
- @bar-logo-color:rgba(red(@bar-logo-c),green(@bar-logo-c),blue(@bar-logo-c),0.15); //logo color
- @bar-logo-bg-color:transparent; //logo background
- @bar-logo-color-hover:rgba(red(@bar-logo-c),green(@bar-logo-c),blue(@bar-logo-c),1); //logo H color
- @bar-logo-bg-color-hover:transparent; //logo H background
- @bar-text-color:#ccc; //bar TEXT
- @bar-link-color:#777; //TOP LINK color
- @bar-link-bg-color:transparent; // TOP LINK background
- @bar-dd-bg-color:@c-alter;//#f8f8f8; // DD background
- @bar-link-color-hover:#fff; // TOP LINK color H
- @bar-link-bg-color-hover:lighten(@bar-dd-bg-color,3%); // TOP LINK background H
- @bar-link-color-active:#fff; // TOP LINK color A
- @bar-link-color-open:#fff; // TOP LINK color A
- @bar-link-bg-color-active:transparent; // TOP LINK background A
- @bar-ddlink-color:#fff; //DD LINK color
- @bar-ddlink-color-hover:#fff; // DD color H
- @bar-ddlink-color-active:@c-alter;//rgba(255,255,255,0.8); // DD color A
-
- @bar-btn-color:#000;
- @bar-btn-color-hover:#fff;
- @bar-btn-bg-color:transparent;
- @bar-btn-bg-color-hover: @c-alter;
-}
+/////header
+@header-height-px:60px;
+@header-height-vp:20vh;
+@header-bg-color:@c-main;
+@header-font-size:12px;
+@header-title-font-size:12px;
+@header-title-font-weight:bold;
+@header-tel-font-size:18px;
+@header-tel-font-weight:bold;
+@header-tel-color:@gray-darker;
+@header-title-color:@gray-light;
+@header-link-color:@gray-dark;
+@header-link-color-hover:@gray-dark;
 
 
-//@bar-bg-color:#fff; //bar background
-//@bar-logo-c:#fff;
-//@bar-logo-color:rgba(red(@bar-logo-c),green(@bar-logo-c),blue(@bar-logo-c),0.95); //logo color
-//@bar-logo-bg-color:transparent; //logo background
-//@bar-logo-color-hover:rgba(red(@bar-logo-c),green(@bar-logo-c),blue(@bar-logo-c),1); //logo H color
-//@bar-logo-bg-color-hover:transparent; //logo H background
-@bar-text-color:#ccc; //bar TEXT
-@bar-link-color:#777; //TOP LINK color
-@bar-link-bg-color:transparent; // TOP LINK background
-@bar-dd-bg-color:@c-alter;//#f8f8f8; // DD background
-@bar-link-color-hover:#fff; // TOP LINK color H
-@bar-link-bg-color-hover:lighten(@bar-dd-bg-color,3%); // TOP LINK background H
-@bar-link-color-active:#fff; // TOP LINK color A
-@bar-link-color-open:#fff; // TOP LINK color A
-@bar-link-bg-color-active:transparent; // TOP LINK background A
-@bar-ddlink-color:#fff; //DD LINK color
-@bar-ddlink-color-hover:#fff; // DD color H
-@bar-ddlink-color-active:@c-alter;//rgba(255,255,255,0.8); // DD color A
 
-@bar-btn-color:#000;
-@bar-btn-color-hover:#fff;
-@bar-btn-bg-color:transparent;
-@bar-btn-bg-color-hover: @c-alter;
-
-.get_bar_dark1{
- @bar-bg-color:@c-alter; //bar background
- @bar-logo-c:#fff;
- @bar-logo-color:rgba(red(@bar-logo-c),green(@bar-logo-c),blue(@bar-logo-c),0.2); //logo color
- @bar-logo-bg-color:transparent; //logo background
- @bar-logo-color-hover:rgba(red(@bar-logo-c),green(@bar-logo-c),blue(@bar-logo-c),1); //logo H color
- @bar-logo-bg-color-hover:transparent; //logo H background
- @bar-text-color:rgba(255,255,255,0.6); //bar TEXT
- @bar-link-color:#fff; //TOP LINK color
- @bar-link-bg-color:transparent; // TOP LINK background
- @bar-dd-bg-color:#fff;//#f8f8f8; // DD background
- @bar-link-color-hover:#fff; // TOP LINK color H
- @bar-link-bg-color-hover:lighten(@bar-bg-color,3%); // TOP LINK background H
- @bar-link-color-active:@bar-link-color; // TOP LINK color A
- @bar-link-color-open:#777; // TOP LINK color A
- @bar-link-bg-color-active:transparent; // TOP LINK background A
- @bar-ddlink-color:#555; //DD LINK color
- @bar-ddlink-color-hover:#777; // DD color H
- @bar-ddlink-color-active:#777;//rgba(255,255,255,0.8); // DD color A
-
- @bar-btn-color:@bar-link-color;
- @bar-btn-color-hover:@bar-link-color;
- @bar-btn-bg-color:lighten(@bar-bg-color,5%);
- @bar-btn-bg-color-hover:darken(@bar-bg-color,5%);
-}
 
 ////footer
 @footer-bg-color:transparent;
-@footer-font-size:11px;
-@footer-title-font-size:11px;
+@footer-font-size:12px;
+@footer-title-font-size:12px;
 @footer-title-font-weight:bold;
-@footer-tel-font-size:28px;
+@footer-tel-font-size:18px;
 @footer-tel-font-weight:bold;
-@footer-tel-color:@gray-light;
+@footer-tel-color:@gray-darker;
 @footer-title-color:@gray-light;
-@footer-link-color:@gray-light;
-@footer-link-color-hover:#222;
+@footer-link-color:@gray-dark;
+@footer-link-color-hover:@gray-dark;
 
 
 

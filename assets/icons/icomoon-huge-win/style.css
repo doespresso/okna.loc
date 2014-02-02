@@ -1,3 +1,4 @@
+
 .icon-chat:before {
 	content: "\e600";
 }
@@ -2988,6 +2989,24 @@
 }
 .icon-win_percent:before {
 	content: "\ea18";
+}
+.icon-win_calc_main:before {
+	content: "\eb01";
+}
+.icon-win_win_backcall:before {
+	content: "\eb02";
+}
+.icon-win_backcall:before {
+	content: "\eb03";
+}
+.icon-logo_alter_1:before {
+	content: "\eb04";
+}
+.icon-logo_alter:before {
+	content: "\eb05";
+}
+.icon-logo_alter_2:before {
+	content: "\eb06";
 }
 .icon-phone22:before {
 	content: "\e81d";

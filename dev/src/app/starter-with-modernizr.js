@@ -889,8 +889,8 @@ yepnope([
             'mmenu':function (url, result, key) {
                 console.log("menu");
                 $('#menu').mmenu({
-                    zposition:"front",
-                    header:true,
+                    position: "left",
+                    zposition: "back",
                     searchfield:true,
                     counters:true
                 });

@@ -10,12 +10,13 @@
 @swiper-title-font-family:'ProximaNova',Arial;
 @swiper-title-font-weight:bold;
 .swiper-full{
-  @swiper-h:640px;
+  @swiper-h:70vh;
   color:@swiper-color;
   height: @swiper-h;
   position:relative;
   z-index:1000;
   .swiper-slide{
+    height: 640px;
     height: @swiper-h;
   };
 
@@ -48,9 +49,9 @@
         max-width: 40%;
       }
     }
-  .transition(1.75s);
+  .transition(0.75s);
   }
-.swiper-slide-active>.content-wrapper{top:45%}
+.swiper-slide-active>.content-wrapper{top:40%}
 
 .ui-arrow{
   display:none

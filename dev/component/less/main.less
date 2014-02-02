@@ -4,11 +4,25 @@ body {
   }
 }
 
-a{
-  color:inherit;
-  &:hover{
-    color:inherit;
+header {
+  margin-top:@navbar-height;
+  .presentation {
+    clear: both;
+    background-color: @c-main;
+    display: none;
   }
+  .header-image {
+    height:@header-height-px;
+    height:@header-height-vp;
+    width:100%;
+    background-color: @header-bg-color;
+    #bg-cover(@url:'/assets/img/big/1.jpg');
+    background-position: center center;
+  }
+&.header-banner{
+  .presentation {display: block;}
+  .header-image {display: none;}
+}
 }
 
 .centered{
@@ -95,20 +109,7 @@ a{
 
 
 
-
-header {
-  .presentation {
-    clear: both;
-    background-color: @c-main;
-  }
-}
-
 footer {
-  background-color: @footer-bg-color;
-  background-repeat: no-repeat;
-  background-image: url('/assets/logo/globe_g.svg');
-  background-position: 80% 100px;
-  background-size: 200% auto;
   margin: @gap-big*2 0 0 0;
   border-top: #eee 0px solid;
   padding: @gap-big 0;
@@ -120,6 +121,7 @@ footer {
     font-weight: @footer-title-font-weight;
     color: @footer-title-color;
     text-transform: uppercase;
+    margin-bottom: @gap-small;
   }
   a {
     color: @footer-link-color;
@@ -184,7 +186,6 @@ footer {
     font-size: 14px;
     margin: 0;
   }
-//  email{font-size: 12px; margin:0;}
 ////logo footer
   .logo {
     width: 200px;
