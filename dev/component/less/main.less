@@ -111,6 +111,9 @@ header {
 
 footer {
   text-align: center;
+  @media (min-width: @grid-float-breakpoint) {
+    text-align: left;
+  }
   margin: @gap-big*2 0 0 0;
   border-top: #eee 0px solid;
   padding: @gap-big 0;
@@ -231,4 +234,16 @@ position:relative;
   .btn{width:280px;}
 }
 
+/////////////section PAGE content
 
+#page-content{
+  padding: @gap-big 0;
+}
+
+#content-scroll{
+  background-color: @gray-light;
+  padding: @gap-big 0;
+//  .box-shadow(inset 0 5px 10px rgba(0,0,0,0.1));
+  color:#fff;
+  a{color:#fff; text-decoration: underline;}
+}

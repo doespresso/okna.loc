@@ -30,10 +30,21 @@ h2{
   }
 }
 p{
-  margin-bottom: 1.8em;
-  @media (max-width: @screen-xs-max) {
-    padding-left:1.8em;
-    padding-right:1.8em;
-  }
+//  margin-bottom: 1.8em;
+  >a{
+      text-decoration: underline;
+      &:hover{
+        text-decoration: none;
+      }
+    }
 }
+//>p{
+//  @media (max-width: @screen-xs-max) {
+//    padding-left:1.8em;
+//    padding-right:1.8em;
+//  }
+//}
+  .pager{
+    margin-top: @gap-big;
+  }
 }

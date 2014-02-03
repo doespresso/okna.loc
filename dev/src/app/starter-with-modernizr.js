@@ -858,21 +858,21 @@ paceOptions = {
     elements:false,
     restartOnRequestAfter:false
 }
-yepnope.injectCss(['../dev/component/switchery/switchery.css']);
-yepnope.injectCss(['../dev/component/jQuery.mmenu/src/css/jquery.mmenu.all.css']);
+yepnope.injectCss(['http://okna.loc/dev/component/switchery/switchery.css']);
+yepnope.injectCss(['http://okna.loc/dev/component/jQuery.mmenu/src/css/jquery.mmenu.all.css']);
 yepnope([
     {
         load:{
-            'pace':'../assets/js/vendor/pace/pace.min.js',
-            'jquery':'../assets/js/vendor/jquery/jquery.min.js',
-            'underscore':'../assets/js/vendor/underscore/underscore.min.js',
-//            'backbone':'../assets/js/vendor/backbone/backbone.min.js',
-//            'marionette':'../assets/js/vendor/backbone/marionette.min.js',
-            'bootstrap':'../assets/js/vendor/bootstrap/bootstrap.min.js',
-            'swiper':'../assets/js/vendor/swiper/swiper.min.js',
-            'swiper_progress':'../assets/js/vendor/swiper/swiper_progress.min.js',
-            'switchery':'../assets/js/vendor/switchery/switchery.min.js',
-            'mmenu':'../dev/component/jQuery.mmenu/src/js/jquery.mmenu.min.all.js',
+            'pace':'http://okna.loc/assets/js/vendor/pace/pace.min.js',
+            'jquery':'http://okna.loc/assets/js/vendor/jquery/jquery.min.js',
+            'underscore':'http://okna.loc/assets/js/vendor/underscore/underscore.min.js',
+//            'backbone':'http://okna.loc/assets/js/vendor/backbone/backbone.min.js',
+//            'marionette':'http://okna.loc/assets/js/vendor/backbone/marionette.min.js',
+            'bootstrap':'http://okna.loc/assets/js/vendor/bootstrap/bootstrap.min.js',
+            'swiper':'http://okna.loc/assets/js/vendor/swiper/swiper.min.js',
+            'swiper_progress':'http://okna.loc/assets/js/vendor/swiper/swiper_progress.min.js',
+            'switchery':'http://okna.loc/assets/js/vendor/switchery/switchery.min.js',
+            'mmenu':'http://okna.loc/dev/component/jQuery.mmenu/src/js/jquery.mmenu.min.all.js',
         },
         callback:{
             'pace':function (url, result, key) {
@@ -915,11 +915,11 @@ yepnope([
                 $('#top-prev').on('click', function(e){
                     e.preventDefault()
                     fullslider.swipePrev()
-                  })
+                  });
                 $('#top-next').on('click', function(e){
                     e.preventDefault()
                     fullslider.swipeNext()
-                  })
+                  });
 
                 //////content tabs//////
                 var contenttabs = new Swiper('#home-section-catalog .swiper-container', {
@@ -946,14 +946,23 @@ yepnope([
                 });
 
                 ///////news////////
-                var news = new Swiper('.swiper-line', {
+                var news_scroll = new Swiper('.news-list-scroll-hor', {
                     pagination:'#news-pagination',
                     paginationClickable:true,
 //                  calculateHeight:true,
 //                  slidesPerView: 3,
                     slidesPerView:'auto',
 //                  loop: true
-                })
+                });
+
+                $('#news-prev').on('click', function(e){
+                    e.preventDefault()
+                    news_scroll.swipePrev()
+                  });
+                $('#news-next').on('click', function(e){
+                    e.preventDefault()
+                    news_scroll.swipeNext()
+                  });
 
 
             },
@@ -961,7 +970,7 @@ yepnope([
     },
     {
         load:{
-            'snapsvg':'../assets/js/vendor/snap.svg/snapsvg.min.js',
+            'snapsvg':'http://okna.loc/assets/js/vendor/snap.svg/snapsvg.min.js',
         },
         complete:function () {
             console.log("snapsvg");
