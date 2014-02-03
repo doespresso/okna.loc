@@ -9,7 +9,7 @@
   "private":true,
   "dependencies":{
     "jquery":null,
-    "bootstrap":"~3.0.3",
+    "bootstrap":"3.0.3",
     "bootstrap-jasny":"3.0.1",
     "sly":"~1.2.1",
     "backbone":null,
