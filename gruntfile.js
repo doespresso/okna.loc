@@ -1,7 +1,7 @@
 module.exports = function (grunt) {
     grunt.initConfig({
         pkg:grunt.file.readJSON('package.json'),
-        bootstrap_folder:'dev/component/bootstrap',
+        bootstrap_folder:'dev/component/bootstrap_get',
         sass: {
             dist: {
               options: {

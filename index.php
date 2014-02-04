@@ -39,9 +39,48 @@ require_once '/Users/jd/servers/LOCALHOST/okna.loc/public/cms/kernel/prog/demo.i
 <body>
 <div id="page">
 <header class="">
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+          <span class="sr-only">открыть меню</span> <span class="icon-bar"></span> <span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+        <div class="navbar-brand" href="http://<?php echo $_SERVER['SERVER_NAME']?>/">
+          <div class="logo-img"><a href="http://<?php echo $_SERVER['SERVER_NAME']?>/"><span class="logo-icon"><i class="icon-logo"></i></span></a></div>
+          <div class="logo"><a href="http://<?php echo $_SERVER['SERVER_NAME']?>/">оконный двор</a></div>
+        </div>
+        <!--<a class="navbar-phones" href="#"><div class="phone two-lines"><tel>+7 495 223 45 34</tel><tel>223 45 84</tel></div></a>-->
+      </div>
+<div class="collapse navbar-collapse" id="navbar-collapse">
+<?php include_once SB_CMS_PL_PATH.'/pl_menu/prog/pl_menu.php';
+
+        fMenu_Elem_Tree('-1', '4', 'a:11:{s:3:\"ids\";s:2:\"39\";s:7:\"temp_id\";s:1:\"4\";s:4:\"from\";s:1:\"1\";s:2:\"to\";s:0:\"\";s:5:\"count\";s:1:\"0\";s:16:\"parent_selection\";s:1:\"1\";s:11:\"parent_link\";s:1:\"0\";s:11:\"show_closed\";s:1:\"0\";s:11:\"show_hidden\";s:1:\"0\";s:11:\"menu_design\";s:1:\"0\";s:12:\"query_string\";s:1:\"1\";}', '0');
+
+        ?>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <div class="navbar-phone">
+              <tel>+7 495 223 45 34</tel>
+            </div>
+          </li>
+          <li>
+            <button href="#menu" type="button" class="btn btn-default navbar-btn">обратный звонок</button>
+          </li>
+          <li>
+            <a id="show-calc" attr-toggled="false" href="#" class="navbar-icon"><i class="icon-win_calc_main"></i></a>
+          </li>
+        </ul>
+
+</div>
+
+</div>
+</nav>
+
 <div class="header-image"></div>
 </header>
-
+<section id="calculator">calc</div>
 <section id="page-content">
   <div class="container">
     <div class="row">
@@ -49,7 +88,7 @@ require_once '/Users/jd/servers/LOCALHOST/okna.loc/public/cms/kernel/prog/demo.i
       <div id="left-nav" class="col-md-3">
 <?php include_once SB_CMS_PL_PATH.'/pl_menu/prog/pl_menu.php';
 
-        fMenu_Elem_Tree('-1', '2', 'a:11:{s:3:\"ids\";s:2:\"39\";s:7:\"temp_id\";s:1:\"2\";s:4:\"from\";s:1:\"1\";s:2:\"to\";s:0:\"\";s:5:\"count\";s:1:\"0\";s:16:\"parent_selection\";s:1:\"1\";s:11:\"parent_link\";s:1:\"0\";s:11:\"show_closed\";s:1:\"0\";s:11:\"show_hidden\";s:1:\"0\";s:11:\"menu_design\";s:1:\"0\";s:12:\"query_string\";s:1:\"1\";}', '2');
+        fMenu_Elem_Tree('-1', '2', 'a:11:{s:3:\"ids\";s:2:\"39\";s:7:\"temp_id\";s:1:\"2\";s:4:\"from\";s:1:\"1\";s:2:\"to\";s:0:\"\";s:5:\"count\";s:1:\"0\";s:16:\"parent_selection\";s:1:\"1\";s:11:\"parent_link\";s:1:\"0\";s:11:\"show_closed\";s:1:\"0\";s:11:\"show_hidden\";s:1:\"0\";s:11:\"menu_design\";s:1:\"0\";s:12:\"query_string\";s:1:\"1\";}', '3');
 
         ?>
       </div>
@@ -58,13 +97,13 @@ require_once '/Users/jd/servers/LOCALHOST/okna.loc/public/cms/kernel/prog/demo.i
         <article>
 <h1><?php include_once SB_CMS_PL_PATH.'/pl_pages/prog/pl_pages.php';
 
-        fPages_Elem_Page_Name_Plain('-1', '-1', 'a:0:{}', '0', true);
+        fPages_Elem_Page_Name_Plain('-1', '-1', 'a:0:{}', '1', true);
 
         ?></h1>
 
 <?php include_once SB_CMS_PL_PATH.'/pl_news/prog/pl_news.php';
 
-        fNews_Elem_List('-1', '2', 'a:35:{s:3:\"ids\";s:2:\"14\";s:7:\"temp_id\";s:1:\"2\";s:6:\"filter\";s:3:\"all\";s:5:\"sort1\";s:8:\"n.n_date\";s:5:\"sort2\";s:0:\"\";s:5:\"sort3\";s:0:\"\";s:6:\"order1\";s:4:\"DESC\";s:6:\"order2\";s:4:\"DESC\";s:6:\"order3\";s:4:\"DESC\";s:12:\"allow_bbcode\";s:1:\"0\";s:8:\"use_sort\";s:1:\"0\";s:4:\"page\";s:24:\"http://okna.loc/show.php\";s:9:\"auth_page\";s:0:\"\";s:9:\"edit_page\";s:0:\"\";s:9:\"subcategs\";s:1:\"1\";s:11:\"show_hidden\";s:1:\"0\";s:13:\"show_selected\";s:1:\"0\";s:10:\"rubrikator\";s:1:\"1\";s:5:\"cloud\";s:1:\"0\";s:10:\"cloud_comp\";s:1:\"0\";s:8:\"calendar\";s:1:\"0\";s:14:\"calendar_field\";s:6:\"n_date\";s:15:\"registred_users\";s:1:\"0\";s:10:\"use_filter\";s:1:\"0\";s:12:\"filter_logic\";s:3:\"AND\";s:17:\"filter_text_logic\";s:3:\"AND\";s:14:\"filter_compare\";s:2:\"IN\";s:12:\"filter_morph\";s:1:\"0\";s:25:\"registred_users_edit_link\";s:1:\"1\";s:8:\"moderate\";s:1:\"0\";s:14:\"moderate_email\";s:0:\"\";s:19:\"use_component_cache\";s:1:\"0\";s:13:\"cache_not_url\";s:1:\"0\";s:13:\"cache_not_get\";s:1:\"0\";s:18:\"cache_not_get_list\";s:0:\"\";}', '1');
+        fNews_Elem_List('-1', '2', 'a:35:{s:3:\"ids\";s:2:\"14\";s:7:\"temp_id\";s:1:\"2\";s:6:\"filter\";s:3:\"all\";s:5:\"sort1\";s:8:\"n.n_date\";s:5:\"sort2\";s:0:\"\";s:5:\"sort3\";s:0:\"\";s:6:\"order1\";s:4:\"DESC\";s:6:\"order2\";s:4:\"DESC\";s:6:\"order3\";s:4:\"DESC\";s:12:\"allow_bbcode\";s:1:\"0\";s:8:\"use_sort\";s:1:\"0\";s:4:\"page\";s:24:\"http://okna.loc/show.php\";s:9:\"auth_page\";s:0:\"\";s:9:\"edit_page\";s:0:\"\";s:9:\"subcategs\";s:1:\"1\";s:11:\"show_hidden\";s:1:\"0\";s:13:\"show_selected\";s:1:\"0\";s:10:\"rubrikator\";s:1:\"1\";s:5:\"cloud\";s:1:\"0\";s:10:\"cloud_comp\";s:1:\"0\";s:8:\"calendar\";s:1:\"0\";s:14:\"calendar_field\";s:6:\"n_date\";s:15:\"registred_users\";s:1:\"0\";s:10:\"use_filter\";s:1:\"0\";s:12:\"filter_logic\";s:3:\"AND\";s:17:\"filter_text_logic\";s:3:\"AND\";s:14:\"filter_compare\";s:2:\"IN\";s:12:\"filter_morph\";s:1:\"0\";s:25:\"registred_users_edit_link\";s:1:\"1\";s:8:\"moderate\";s:1:\"0\";s:14:\"moderate_email\";s:0:\"\";s:19:\"use_component_cache\";s:1:\"0\";s:13:\"cache_not_url\";s:1:\"0\";s:13:\"cache_not_get\";s:1:\"0\";s:18:\"cache_not_get_list\";s:0:\"\";}', '2');
 
         ?>
 <aside>
@@ -87,7 +126,7 @@ require_once '/Users/jd/servers/LOCALHOST/okna.loc/public/cms/kernel/prog/demo.i
 <section id="content-scroll">
 <?php include_once SB_CMS_PL_PATH.'/pl_news/prog/pl_news.php';
 
-        fNews_Elem_List('-1', '3', 'a:35:{s:3:\"ids\";s:2:\"14\";s:7:\"temp_id\";s:1:\"3\";s:6:\"filter\";s:3:\"all\";s:5:\"sort1\";s:8:\"n.n_date\";s:5:\"sort2\";s:0:\"\";s:5:\"sort3\";s:0:\"\";s:6:\"order1\";s:4:\"DESC\";s:6:\"order2\";s:4:\"DESC\";s:6:\"order3\";s:4:\"DESC\";s:12:\"allow_bbcode\";s:1:\"0\";s:8:\"use_sort\";s:1:\"0\";s:4:\"page\";s:24:\"http://okna.loc/show.php\";s:9:\"auth_page\";s:0:\"\";s:9:\"edit_page\";s:0:\"\";s:9:\"subcategs\";s:1:\"1\";s:11:\"show_hidden\";s:1:\"0\";s:13:\"show_selected\";s:1:\"0\";s:10:\"rubrikator\";s:1:\"1\";s:5:\"cloud\";s:1:\"0\";s:10:\"cloud_comp\";s:1:\"0\";s:8:\"calendar\";s:1:\"0\";s:14:\"calendar_field\";s:6:\"n_date\";s:15:\"registred_users\";s:1:\"0\";s:10:\"use_filter\";s:1:\"0\";s:12:\"filter_logic\";s:3:\"AND\";s:17:\"filter_text_logic\";s:3:\"AND\";s:14:\"filter_compare\";s:2:\"IN\";s:12:\"filter_morph\";s:1:\"0\";s:25:\"registred_users_edit_link\";s:1:\"1\";s:8:\"moderate\";s:1:\"0\";s:14:\"moderate_email\";s:0:\"\";s:19:\"use_component_cache\";s:1:\"0\";s:13:\"cache_not_url\";s:1:\"0\";s:13:\"cache_not_get\";s:1:\"0\";s:18:\"cache_not_get_list\";s:0:\"\";}', '8');
+        fNews_Elem_List('-1', '3', 'a:35:{s:3:\"ids\";s:2:\"14\";s:7:\"temp_id\";s:1:\"3\";s:6:\"filter\";s:3:\"all\";s:5:\"sort1\";s:8:\"n.n_date\";s:5:\"sort2\";s:0:\"\";s:5:\"sort3\";s:0:\"\";s:6:\"order1\";s:4:\"DESC\";s:6:\"order2\";s:4:\"DESC\";s:6:\"order3\";s:4:\"DESC\";s:12:\"allow_bbcode\";s:1:\"0\";s:8:\"use_sort\";s:1:\"0\";s:4:\"page\";s:24:\"http://okna.loc/show.php\";s:9:\"auth_page\";s:0:\"\";s:9:\"edit_page\";s:0:\"\";s:9:\"subcategs\";s:1:\"1\";s:11:\"show_hidden\";s:1:\"0\";s:13:\"show_selected\";s:1:\"0\";s:10:\"rubrikator\";s:1:\"1\";s:5:\"cloud\";s:1:\"0\";s:10:\"cloud_comp\";s:1:\"0\";s:8:\"calendar\";s:1:\"0\";s:14:\"calendar_field\";s:6:\"n_date\";s:15:\"registred_users\";s:1:\"0\";s:10:\"use_filter\";s:1:\"0\";s:12:\"filter_logic\";s:3:\"AND\";s:17:\"filter_text_logic\";s:3:\"AND\";s:14:\"filter_compare\";s:2:\"IN\";s:12:\"filter_morph\";s:1:\"0\";s:25:\"registred_users_edit_link\";s:1:\"1\";s:8:\"moderate\";s:1:\"0\";s:14:\"moderate_email\";s:0:\"\";s:19:\"use_component_cache\";s:1:\"0\";s:13:\"cache_not_url\";s:1:\"0\";s:13:\"cache_not_get\";s:1:\"0\";s:18:\"cache_not_get_list\";s:0:\"\";}', '9');
 
         ?>
 </section>
@@ -107,21 +146,21 @@ require_once '/Users/jd/servers/LOCALHOST/okna.loc/public/cms/kernel/prog/demo.i
         <div class="col-md-3">
 <?php include_once SB_CMS_PL_PATH.'/pl_menu/prog/pl_menu.php';
 
-        fMenu_Elem_Tree('-1', '1', 'a:11:{s:3:\"ids\";s:2:\"36\";s:7:\"temp_id\";s:1:\"1\";s:4:\"from\";s:1:\"1\";s:2:\"to\";s:0:\"\";s:5:\"count\";s:1:\"0\";s:16:\"parent_selection\";s:1:\"1\";s:11:\"parent_link\";s:1:\"0\";s:11:\"show_closed\";s:1:\"0\";s:11:\"show_hidden\";s:1:\"0\";s:11:\"menu_design\";s:1:\"0\";s:12:\"query_string\";s:1:\"1\";}', '5');
+        fMenu_Elem_Tree('-1', '1', 'a:11:{s:3:\"ids\";s:2:\"36\";s:7:\"temp_id\";s:1:\"1\";s:4:\"from\";s:1:\"1\";s:2:\"to\";s:0:\"\";s:5:\"count\";s:1:\"0\";s:16:\"parent_selection\";s:1:\"1\";s:11:\"parent_link\";s:1:\"0\";s:11:\"show_closed\";s:1:\"0\";s:11:\"show_hidden\";s:1:\"0\";s:11:\"menu_design\";s:1:\"0\";s:12:\"query_string\";s:1:\"1\";}', '6');
 
         ?>
         </div>
         <div class="col-md-3">
 <?php include_once SB_CMS_PL_PATH.'/pl_menu/prog/pl_menu.php';
 
-        fMenu_Elem_Tree('-1', '1', 'a:11:{s:3:\"ids\";s:2:\"37\";s:7:\"temp_id\";s:1:\"1\";s:4:\"from\";s:1:\"1\";s:2:\"to\";s:0:\"\";s:5:\"count\";s:1:\"0\";s:16:\"parent_selection\";s:1:\"1\";s:11:\"parent_link\";s:1:\"0\";s:11:\"show_closed\";s:1:\"0\";s:11:\"show_hidden\";s:1:\"0\";s:11:\"menu_design\";s:1:\"0\";s:12:\"query_string\";s:1:\"1\";}', '6');
+        fMenu_Elem_Tree('-1', '1', 'a:11:{s:3:\"ids\";s:2:\"37\";s:7:\"temp_id\";s:1:\"1\";s:4:\"from\";s:1:\"1\";s:2:\"to\";s:0:\"\";s:5:\"count\";s:1:\"0\";s:16:\"parent_selection\";s:1:\"1\";s:11:\"parent_link\";s:1:\"0\";s:11:\"show_closed\";s:1:\"0\";s:11:\"show_hidden\";s:1:\"0\";s:11:\"menu_design\";s:1:\"0\";s:12:\"query_string\";s:1:\"1\";}', '7');
 
         ?>
         </div>
         <div class="col-md-3">
 <?php include_once SB_CMS_PL_PATH.'/pl_menu/prog/pl_menu.php';
 
-        fMenu_Elem_Tree('-1', '1', 'a:11:{s:3:\"ids\";s:2:\"38\";s:7:\"temp_id\";s:1:\"1\";s:4:\"from\";s:1:\"1\";s:2:\"to\";s:0:\"\";s:5:\"count\";s:1:\"0\";s:16:\"parent_selection\";s:1:\"1\";s:11:\"parent_link\";s:1:\"0\";s:11:\"show_closed\";s:1:\"0\";s:11:\"show_hidden\";s:1:\"0\";s:11:\"menu_design\";s:1:\"0\";s:12:\"query_string\";s:1:\"1\";}', '7');
+        fMenu_Elem_Tree('-1', '1', 'a:11:{s:3:\"ids\";s:2:\"38\";s:7:\"temp_id\";s:1:\"1\";s:4:\"from\";s:1:\"1\";s:2:\"to\";s:0:\"\";s:5:\"count\";s:1:\"0\";s:16:\"parent_selection\";s:1:\"1\";s:11:\"parent_link\";s:1:\"0\";s:11:\"show_closed\";s:1:\"0\";s:11:\"show_hidden\";s:1:\"0\";s:11:\"menu_design\";s:1:\"0\";s:12:\"query_string\";s:1:\"1\";}', '8');
 
         ?>
         </div>
