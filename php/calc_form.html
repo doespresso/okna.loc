@@ -1,8 +1,35 @@
 <script id="type_selector_template" type="text/template">
-type selector template <%= name %>
+  <% _.each(items, function(item,key){ %>
+  <option name="<%= key %>"><%= item.name %></option>
+  <% }); %>
+</script>
+
+<script id="window_item_template" type="text/template">
+  <%= frame_name %>
+</script>
+
+<script id="window_item_template_pic" type="text/template">
+<div class="w-selector" data-toggle="tooltip" data-placement="top" title="<%= frame_name %>">
+<% _.each(sections, function(num,key){ %>
+<div class="w-section"><%= key %></div>
+<% }); %>
+</div>
+</script>
+
+<script id="window_item_template_edit" type="text/template">
+<div class="w-editor">
+<% _.each(sections, function(num,key){ %>
+<div class="w-edit selected-<%= num.selected %>" id="<%= num.name %>" attr-section-pos="<%= key %>"><%= key %></div>
+<% }); %>
+</div>
+</script>
+
+<script id="window_list_template" type="text/template">
+  <ul class="w-selectors"></ul>
 </script>
 
 
+<div id="test_area" data-toggle="tooltip" data-placement="left" title="Tooltip on left">tttttt</div>
 <div id="calc_container" class="container">
   <div class="row">
     <div class="col-md-12">

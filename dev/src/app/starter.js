@@ -114,11 +114,8 @@ yepnope([
         }
     },
     {
-//        load:{
-//            'snapsvg':'http://okna.loc/assets/js/vendor/snap.svg/snapsvg.min.js',
-//        },
+
         complete:function () {
-            console.log("snapsvg");
 
         }
     }

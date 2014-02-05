@@ -2,6 +2,134 @@
 
 
     Calc = new Backbone.Marionette.Application();
+    SelectBox = Backbone.Collection.extend()
+    Product = Backbone.Model.extend();
+    ProductView = Backbone.Marionette.ItemView.extend({
+        tagName:"li",
+        template: "#window_item_template_pic",
+        onRender: function(){
+
+        },
+        events:{
+            "click":"selectFrame"
+        },
+        selectFrame:function(e){
+            this.$el.addClass("selected");
+        }
+    });
+
+    ProductViewEdit = Backbone.Marionette.ItemView.extend({
+        tagName:"li",
+        template: "#window_item_template_edit",
+        onRender: function(){
+
+        },
+//        events:{
+//            "click":"selectFrame"
+//        },
+//        selectFrame:function(e){
+//            this.$el.addClass("selected");
+//        }
+    });
+
+
+    Products = Backbone.Collection.extend({
+        model:Product,
+        makeSelectbox:function (type) {
+            var selectbox = new Backbone.Collection();
+            wtypes =  _.uniq(this.pluck(type), false, function (wtype) {return wtype.toLowerCase();});
+            _.each(wtypes,function(wtype){
+               selectbox.add(new Backbone.Model({'name':wtype}));
+            });
+            return selectbox;
+        }
+    });
+
+    ProductsView = Backbone.Marionette.CompositeView.extend({
+        itemView: ProductView,
+        itemViewContainer:"ul",
+        template: "#window_list_template"
+    });
+
+
+
+    ProductTypeSelector = Backbone.Marionette.ItemView.extend({
+        template:"#type_selector_template",
+//        template : _.template('<%= item.type %>'),
+        tagName: "select",
+        id:"window_type_selectbox",
+        events:{
+            'change':'sectionBlockSelect'
+        },
+        sectionBlockSelect:function(e){
+            console.log(this.$el.val());
+        }
+    });
+
+
+
+    /////////////////////////////////////////////////initialize
+    Calc.addInitializer(function (options) {
+
+        var products = new Products;
+
+        var jqxhr = $.getJSON("http://okna.loc/php/getoptions.php", {
+            tags:"mount rainier",
+            tagmode:"any",
+            format:"json"
+        })
+            .done(function (data) {
+                _.each(data, function (product_type, key) {
+                    _.each(product_type.vari, function(wsections,key){
+                        sections = [];
+                        for (var i=0; i<wsections; i++){
+                            sections.push({'name':'section'+i, 'vopen':false, 'hopen':false, 'selected':false});
+                        }
+                       var product = _.extend(product_type, {'frame_name':product_type.name + ' ' + wsections + ' секций','sections':sections});
+                       products.add(new Product(product));
+                    });
+                });
+
+                ////done
+
+                Calc.settings = {
+                    name:"Оконный калькулятор"
+                }
+
+                Calc.addRegions({
+                    ///////regions
+                    type_selector:"#type_selector",
+                    type_selector_frame:"#type_selector_frame",
+                    type_constructor:"#type_constructor",
+                    order_options:'#order_options',
+                    order_total:'#order_total'
+                });
+
+                var type_selector = new ProductTypeSelector({
+                    collection:products.makeSelectbox("type")
+                });
+                Calc.type_selector.show(type_selector);//                $("#test_area").append(type_selector_main.render().el);
+
+
+                var frame_selector = new ProductsView({
+//                  model: someModel,
+                  collection: products
+                });
+                Calc.type_selector_frame.show(frame_selector);
+                $('.w-selector').tooltip();
+
+                var route = new Route();
+                Backbone.history.start();
+
+
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ", " + error;
+                console.log("Request Failed: " + err);
+            });
+
+
+    });
 
     /////////////////////////////////////////////////router
     var Route = Backbone.Marionette.AppRouter.extend({
@@ -13,88 +141,6 @@
       },
       storestate: function(){
       }
-    });
-
-    /////////////////////////////////////////////////initialize
-    Calc.addInitializer(function (options) {
-        /////load types
-        var jqxhr = $.getJSON("http://okna.loc/php/getoptions.php", {
-            tags:"mount rainier",
-            tagmode:"any",
-            format:"json"
-        })
-            .done(function (data) {
-                products = new ProductTypes();
-                _.each(data, function (product_type, key) {
-//                    console.log(product_type.type);
-//////add frames sections
-                    _.each(product_type.vari, function(wsections,key){
-//                        console.log(wsections ,"секционное", product_type.type);
-                        sections = [];
-                        for (var i=0; i<wsections; i++){
-                            sections.push({'name':'section'+i, 'vopen':false, 'hopen':false, 'selected':false});
-                        }
-                       product = _.extend(new ProductType({'name':product_type.name + ' ' + wsections + ' секций','sections':sections}),product_type);
-                       products.add(product);
-                    });
-                });
-            })
-            .fail(function (jqxhr, textStatus, error) {
-                var err = textStatus + ", " + error;
-                console.log("Request Failed: " + err);
-            });
-
-        Calc.options = {
-            'current':"csds1"
-        };
-
-        console.log(Calc.options.current);
-
-        Calc.addRegions({
-            ///////regions
-            type_selector:"#type_selector",
-            type_selector_farme:"#type_selector_frame",
-            type_constructor:"#type_constructor",
-            order_options:'#order_options',
-            order_total:'#order_total'
-        });
-
-        var route = new Route();
-        Backbone.history.start();
-
-////        console.log(product);
-//        pr1 = new ProductType({"name":"prprprprp","type":"okno plastic"});
-//        pr2 = new ProductType({"name":"1prprpasdasdasdrprp1","type":"okno plastic"});
-//        pr1 = pr2;
-//        vpr1 = new ProductTypeSelector({model:pr1});
-//        vpr2 = new ProductTypeSelector({model:pr2});
-//        console.log(pr1.toJSON(),pr2.toJSON());
-
-        var type_selector = new ProductTypeSelectorItem({collection:products});
-
-        Calc.type_selector.show();
-    });
-
-
-
-
-    ProductType = Backbone.Model.extend({});
-    ProductTypes = Backbone.Collection.extend({model:ProductType});
-
-    /////////type selector view
-    ProductTypeSelectorItem = Backbone.Marionette.ItemView.extend({
-        template:"#type_selector_template",
-//        templateHelpers:{
-//            showMessage:function () {
-//                return this.name + " is the coolest!"
-//            }
-//        }
-    });
-
-
-
-    ProductTypeSelector = Backbone.Marionette.CompositeView.extend({
-
     });
 
 
@@ -109,5 +155,6 @@ $(document).ready(function () {
         }
         $("#calculator").fadeIn(1000);
         Calc.start();
+
     });
 });
