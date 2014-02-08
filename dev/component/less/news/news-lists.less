@@ -41,8 +41,8 @@ date{font-size: @font-size-small;}
   height: @slider-height;
 
   .swiper-slide {
-    width: 300px;
-    padding: @gap-big;
+    width: 260px;
+    padding: @gap-base;
     height: auto;
   }
 
@@ -73,14 +73,19 @@ date{font-size: @font-size-small;}
     }
   }
   .media-heading {
-    font-size: @font-size-large;
+    font-size: @font-size-base;
     line-height: 1.2;
     margin-top: @gap-small;
     font-weight: bold;
   }
   date {
 //    font-size: @font-size-small;
-    display: none;
+//    display: none;
+    font-size: @font-size-small;
+    color:@gray-light;
+    text-transform: uppercase;
+    font-family: @f-main;
+    font-weight: bold;
   }
   &.news-pic-top{
     /////// pic top
@@ -88,7 +93,7 @@ date{font-size: @font-size-small;}
       float:none;
       width:100%;
       height:@tn-height;
-//      display:block;
+      display:block;
       display:none;
       overflow: hidden;
       max-width: none;

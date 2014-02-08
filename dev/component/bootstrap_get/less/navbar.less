@@ -153,6 +153,7 @@
   font-size: @navbar-logotext-font-size;
   line-height: @navbar-logotext-font-size;
   font-weight:bold;
+//  font-family:@f-main;
 
   @media (min-width: @grid-float-breakpoint) {
     .navbar > .container & {
@@ -191,7 +192,7 @@
     background-size: contain;
     width: @navbar-logo-img-width;
     height: @navbar-logo-img-height;
-    color:@navbar-logo-color;
+    color:@navbar-logo-img-color;
     display: block;
     .logo-icon{
       position: relative;
@@ -216,7 +217,7 @@
   font-size: @navbar-tel-font-size;
   line-height: @navbar-tel-font-size;
   font-weight:bold;
-
+//  #icon-embossed-small(@color:#fff; @bg:@c-main);
   &:hover,
   &:focus {
     text-decoration: none;
@@ -433,15 +434,16 @@
 }
 
 
-.navbar-icon, .navbar-nav>li>a.navbar-icon{
+.navbar-icon{
   position: relative;
   display: block;
-  font-size: @navbar-icon-size;
-  line-height: @navbar-icon-size;
-  height: @navbar-height;
-  padding: ((@navbar-height - @navbar-icon-size)/2) @gap-base;
+  font-size: @navbar-icon-size!important;
+  line-height: @navbar-icon-size!important;
+  height: @navbar-height!important;
+  padding: ((@navbar-height - @navbar-icon-size)/2) @gap-small!important;
   text-decoration: none!important;
-//  #icon-embossed-small(@color:#eee; @bg:@c-main);
+  color:@navbar-icon-color!important;
+//  #icon-embossed-small(@color:@navbar-icon-color; @bg:@c-main);
 //  .box-shadow(1px -1px 1px rgba(0,0,0,0.4));
 //  color:#fff!important;
 //  border-left:1px rgba(0,0,0,0.08) solid;
@@ -471,7 +473,11 @@
   }
 
   .navbar-phone{
-    tel{color:@navbar-tel-color;}
+    tel {
+      color: @navbar-tel-color;
+      font-weight: @navbar-tel-font-weight;
+//      font-family: @f-main;
+    }
 //    #text-embossed-small(@color:#fff);
   }
 

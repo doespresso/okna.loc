@@ -111,30 +111,35 @@ header {
 
 footer {
   text-align: center;
+  background-color:@footer-bg-color;
   @media (min-width: @grid-float-breakpoint) {
     text-align: left;
   }
-  margin: @gap-big*2 0 0 0;
+  margin: 0 0 0 0;
   border-top: #eee 0px solid;
-  padding: @gap-big 0;
+  padding: @gap-big*2 0;
   color: @footer-link-color;
   font-size: @footer-font-size;
-  .title {
+  p{margin-bottom: @gap-small;}
+  a {
+    color: @footer-link-color;
+//    text-decoration: underline;
+    &:hover {
+      color: @footer-link-color-hover;
+    }
+    span {
+      font-size: @footer-title-font-size;
+    }
+  }
+  .nav-title{
     font-family: 'ProximaNova';
     font-size: @footer-title-font-size;
     font-weight: @footer-title-font-weight;
     color: @footer-title-color;
     text-transform: uppercase;
     margin-bottom: @gap-small;
-  }
-  a {
-    color: @footer-link-color;
-    text-decoration: underline;
-    &:hover {
-      color: @footer-link-color-hover;
-    }
-    span {
-      font-size: @footer-title-font-size;
+    a{
+      color: @footer-title-color;
     }
   }
   tel {
@@ -143,8 +148,13 @@ footer {
     margin: 0 0 @gap-small 0;
     font-size: @footer-tel-font-size;
     font-weight: @footer-tel-font-weight;
+    letter-spacing: 1px;
     line-height: @footer-tel-font-size; //    letter-spacing: 1px;
     color: @footer-tel-color;
+//    #text-embossed(@color:#fff);
+    @media (max-width:@screen-md-max){
+      font-size: @footer-tel-font-size/1.5;
+    }
   }
   ul {
     list-style: none;
@@ -210,45 +220,38 @@ footer {
   .icon-big {
     font-size: @footer-tel-font-size;
   }
+  p.small{color:lighten(@footer-bg-color,20%)}
 }
 
-///////////sections///////////
-section {
-//  border-top:1px #ccc solid;
-position:relative;
-  &.padding-base {
-    padding: @gap-base 0;
-  }
-  &.padding-big {
-    padding: @gap-big 0;
-  }
-  &.padding-huge {
-    padding: @gap-big*2 0;
-  }
-  &.white {
-    background-color: #fff;
-  }
-}
 
-#homepage-catalog-nav{
-  .btn{width:280px;}
-}
 
-/////////////section PAGE content
+
 
 #page-content{
   padding: @gap-big 0;
 }
 
 #content-scroll{
-  background-color: @gray-light;
-  padding: @gap-big 0;
+//  background-color: darken(@body-bg-color,2%);
+//  background-color: #fff;
+  padding: 0 0;
 //  .box-shadow(inset 0 5px 10px rgba(0,0,0,0.1));
-  color:#fff;
-  a{color:#fff; text-decoration: underline;}
+//  color:#fff;
+  margin:@gap-big*2 0;
+  a{color:@gray;}
+  .desc{font-size: 11px;}
 }
 
+#promo{
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-image: url('/assets/img/big/2.jpg');
+  overflow: hidden;
+}
 
-
-
+#sales{
+  padding: @gap-big 0;
+  background-color: @c-main;
+}
 

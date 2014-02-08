@@ -80,12 +80,14 @@
         })
             .done(function (data) {
                 _.each(data, function (product_type, key) {
-                    _.each(product_type.vari, function(wsections,key){
-                        sections = [];
-                        for (var i=0; i<wsections; i++){
-                            sections.push({'name':'section'+i, 'vopen':false, 'hopen':false, 'selected':false});
+                    _.each(product_type.vari, function(wframe,key){
+                        var wsections = [];
+                        console.log(wframe.name);
+                        for (var i=0; i<wframe.sections.length; i++){
+                            var section_type = wframe.sections[i-1];
+                            wsections.push({'name':'section-'+i, 'vopen':false, 'hopen':false, 'selected':false, 'section_type':section_type});
                         }
-                       var product = _.extend(product_type, {'frame_name':product_type.name + ' ' + wsections + ' секций','sections':sections});
+                       var product = _.extend(product_type, {'name':wframe.name + ' ' + wframe.sections.length + ' секций','sections':wsections, 'selected':wframe.selected || null});
                        products.add(new Product(product));
                     });
                 });
@@ -148,13 +150,13 @@
 
 
 $(document).ready(function () {
-    $("#calculator").load("http://okna.loc/php/calc_form.html", function (response, status, xhr) {
-        if (status == "error") {
-            var msg = "Sorry but there was an error: ";
-            $("#error").html(msg + xhr.status + " " + xhr.statusText);
-        }
-        $("#calculator").fadeIn(1000);
-        Calc.start();
-
-    });
+//    $("#calculator").load("http://okna.loc/php/calc_form.html", function (response, status, xhr) {
+//        if (status == "error") {
+//            var msg = "Sorry but there was an error: ";
+//            $("#error").html(msg + xhr.status + " " + xhr.statusText);
+//        }
+//        $("#calculator").fadeIn(1000);
+//        Calc.start();
+//
+//    });
 });

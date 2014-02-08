@@ -90,7 +90,7 @@
 @line-height-large:              1.33;
 @line-height-small:              1.5;
 
-@border-radius-base:             2px;
+@border-radius-base:             5px;
 @border-radius-large:            3px;
 @border-radius-small:            3px;
 
@@ -142,6 +142,10 @@
 @btn-info-color:                 #fff;
 @btn-info-bg:                    @brand-info;
 @btn-info-border:                darken(@btn-info-bg, 5%);
+
+@btn-dark-color:                 #fff;
+@btn-dark-bg:                    @gray;
+@btn-dark-border:                darken(@gray-dark, 5%);
 
 @btn-link-disabled-color:        @gray-light;
 
@@ -199,13 +203,13 @@
 // Used for a bird's eye view of components dependent on the z-axis
 // Try to avoid customizing these :)
 
-@zindex-navbar:            1000;
-@zindex-dropdown:          1000;
-@zindex-popover:           1010;
-@zindex-tooltip:           1030;
-@zindex-navbar-fixed:      1030;
-@zindex-modal-background:  1040;
-@zindex-modal:             1050;
+@zindex-navbar:            10000;
+@zindex-dropdown:          10000;
+@zindex-popover:           10010;
+@zindex-tooltip:           10030;
+@zindex-navbar-fixed:      10030;
+@zindex-modal-background:  10040;
+@zindex-modal:             10050;
 
 // Media queries breakpoints
 // --------------------------------------------------
@@ -261,10 +265,12 @@
 /////////////
 
 //////////// LOGO
-@navbar-logotext-font-size:14px;
+@navbar-logotext-font-size:16px;
 @navbar-bg-color:#fff; //bar background
-@navbar-logo-c:#fff;
+@navbar-logo-c:#000;
+@navbar-logo-img-c:#fff;
 @navbar-logo-color:rgba(red(@navbar-logo-c),green(@navbar-logo-c),blue(@navbar-logo-c),1); //logo color
+@navbar-logo-img-color:rgba(red(@navbar-logo-img-c),green(@navbar-logo-img-c),blue(@navbar-logo-img-c),1); //logo color
 @navbar-logo-bg-color:transparent; //logo background
 @navbar-logo-color-hover:rgba(red(@navbar-logo-c),green(@navbar-logo-c),blue(@navbar-logo-c),1); //logo H color
 @navbar-logo-bg-color-hover:transparent; //logo H background
@@ -275,12 +281,14 @@
 
 /////////// PHONE
 @navbar-tel-font-size:16px;
-@navbar-tel-color:#000;
+@navbar-tel-font-weight:bold;
+@navbar-tel-color:#222;
 ///////////TOGGLE
 @navbar-default-toggle-border-color:#fff;
 @navbar-default-toggle-hover-bg:transparent;
 //////////ICONS
-@navbar-icon-size:30px;
+@navbar-icon-size:20px;
+@navbar-icon-color:#222;
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -301,11 +309,11 @@
 @navbar-default-border:            darken(@navbar-default-bg, 2%);
 
 // Navbar links
-@navbar-default-link-color:                #000;
-@navbar-default-link-hover-color:          #000;
+@navbar-default-link-color:                #fff;
+@navbar-default-link-hover-color:          #fff;
 @navbar-default-link-hover-bg: #ffd800;//darken(@navbar-default-bg,2%);
-@navbar-default-link-active-color:         #000;
-@navbar-default-link-active-bg:            #ffd800;//darken(@navbar-default-bg, 6.5%);
+@navbar-default-link-active-color:         #222;
+@navbar-default-link-active-bg:            #fff;//darken(@navbar-default-bg, 6.5%);
 @navbar-default-link-disabled-color:       #ccc;
 @navbar-default-link-disabled-bg:          transparent;
 
