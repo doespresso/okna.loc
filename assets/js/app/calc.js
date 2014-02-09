@@ -73,7 +73,7 @@
 
         var products = new Products;
 
-        var jqxhr = $.getJSON("http://okna.loc/php/getoptions.php", {
+        var jqxhr = $.getJSON("http://oknadvor.com/php/getoptions.php", {
             tags:"mount rainier",
             tagmode:"any",
             format:"json"

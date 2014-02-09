@@ -115,13 +115,13 @@ $GLOBALS['sb_db_database'] = 'okna_loc';
 
 $GLOBALS['sb_domains'] = array();
 
-$GLOBALS['sb_domains']['okna.loc'] = array();
-$GLOBALS['sb_domains']['okna.loc']['basedir'] = '/Users/jd/servers/LOCALHOST/okna.loc/public';
-$GLOBALS['sb_domains']['okna.loc']['ftp_host'] = 'local';
-$GLOBALS['sb_domains']['okna.loc']['ftp_basedir'] = '';
-$GLOBALS['sb_domains']['okna.loc']['ftp_user'] = '';
-$GLOBALS['sb_domains']['okna.loc']['ftp_password'] = '';
-$GLOBALS['sb_domains']['okna.loc']['pointers'] = array();
+$GLOBALS['sb_domains']['oknadvor.com'] = array();
+$GLOBALS['sb_domains']['oknadvor.com']['basedir'] = '/Users/jd/servers/LOCALHOST/okna.loc/public';
+$GLOBALS['sb_domains']['oknadvor.com']['ftp_host'] = 'local';
+$GLOBALS['sb_domains']['oknadvor.com']['ftp_basedir'] = '';
+$GLOBALS['sb_domains']['oknadvor.com']['ftp_user'] = '';
+$GLOBALS['sb_domains']['oknadvor.com']['ftp_password'] = '';
+$GLOBALS['sb_domains']['oknadvor.com']['pointers'] = array();
 
 
 /**

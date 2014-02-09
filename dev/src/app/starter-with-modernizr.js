@@ -858,24 +858,24 @@ paceOptions = {
     elements:false,
     restartOnRequestAfter:false
 }
-yepnope.injectCss(['http://okna.loc/dev/component/switchery/switchery.css']);
-yepnope.injectCss(['http://okna.loc/dev/component/jQuery.mmenu/src/css/jquery.mmenu.all.css']);
-yepnope.injectCss(['http://okna.loc/dev/component/magnific-popup/dist/magnific-popup.css']);
+yepnope.injectCss(['http://oknadvor.com/dev/component/switchery/switchery.css']);
+yepnope.injectCss(['http://oknadvor.com/dev/component/jQuery.mmenu/src/css/jquery.mmenu.all.css']);
+yepnope.injectCss(['http://oknadvor.com/dev/component/magnific-popup/dist/magnific-popup.css']);
 yepnope([
     {
         load:{
-            'pace':'http://okna.loc/assets/js/vendor/pace/pace.min.js',
-            'jquery':'http://okna.loc/assets/js/vendor/jquery/jquery.min.js',
-//            'underscore':'http://okna.loc/assets/js/vendor/underscore/underscore.min.js',
-//            'backbone':'http://okna.loc/assets/js/vendor/backbone/backbone.min.js',
-//            'marionette':'http://okna.loc/assets/js/vendor/backbone/marionette.min.js',
-            'bootstrap':'http://okna.loc/assets/js/vendor/bootstrap/bootstrap.min.js',
-            'swiper':'http://okna.loc/assets/js/vendor/swiper/swiper.min.js',
-//            'swiper_progress':'http://okna.loc/assets/js/vendor/swiper/swiper_progress.min.js',
-            'switchery':'http://okna.loc/assets/js/vendor/switchery/switchery.min.js',
-            'mmenu':'http://okna.loc/dev/component/jQuery.mmenu/src/js/jquery.mmenu.min.all.js',
-            'lightbox':'http://okna.loc/dev/component/magnific-popup/dist/jquery.magnific-popup.min.js',
-//            'calc':'http://okna.loc/assets/js/app/calc.js',
+            'pace':'http://oknadvor.com/assets/js/vendor/pace/pace.min.js',
+            'jquery':'http://oknadvor.com/assets/js/vendor/jquery/jquery.min.js',
+//            'underscore':'http://oknadvor.com/assets/js/vendor/underscore/underscore.min.js',
+//            'backbone':'http://oknadvor.com/assets/js/vendor/backbone/backbone.min.js',
+//            'marionette':'http://oknadvor.com/assets/js/vendor/backbone/marionette.min.js',
+            'bootstrap':'http://oknadvor.com/assets/js/vendor/bootstrap/bootstrap.min.js',
+            'swiper':'http://oknadvor.com/assets/js/vendor/swiper/swiper.min.js',
+//            'swiper_progress':'http://oknadvor.com/assets/js/vendor/swiper/swiper_progress.min.js',
+            'switchery':'http://oknadvor.com/assets/js/vendor/switchery/switchery.min.js',
+            'mmenu':'http://oknadvor.com/dev/component/jQuery.mmenu/src/js/jquery.mmenu.min.all.js',
+            'lightbox':'http://oknadvor.com/dev/component/magnific-popup/dist/jquery.magnific-popup.min.js',
+//            'calc':'http://oknadvor.com/assets/js/app/calc.js',
         },
         callback:{
             'pace':function (url, result, key) {
@@ -925,9 +925,22 @@ yepnope([
                 var swipers = Array();
                 $('.swiper-promo').each(function (index) {
                     var sid = $(this).attr("id");
-                    var s_pagination = 'slider-id-'+sid+'-pagination';
-                    swipers[index] = $(this).swiper();
-                    swipers[index].
+                    var s_pagination = '#slider-id-'+sid+'-pagination';
+                    var at = this.attributes;
+                    console.log(at);
+                    var arr = [];
+                    for (var key in at) {
+                        var aname = at[key].nodeName;
+                        console.log(aname);
+                  			if ((aname != undefined) && (aname.indexOf('attr-') == 0)) {
+                  				arr.push(at[key].name + ' = ' + at[key].value);
+                  			}
+                  		}
+                    console.log(arr);
+                    swipers[index] = $(this).swiper({
+                        pagination:s_pagination
+                    });
+//                    swipers[index].
                 });
 console.log(swipers);
 
