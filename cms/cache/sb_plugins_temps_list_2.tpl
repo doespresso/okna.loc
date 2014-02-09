@@ -1,4 +1,4 @@
-a:1:{i:0;a:19:{i:0;s:2:"ru";i:1;s:0:"";i:2;s:1:"1";i:3;s:0:"";i:4;s:97:"<div class="swiper-container swiper-promo" id="slider-id-{CAT_ID}">
+a:1:{i:0;a:19:{i:0;s:2:"ru";i:1;s:0:"";i:2;s:1:"1";i:3;s:0:"";i:4;s:87:"<div class="swiper-container swiper-promo" id="{CAT_ID}">
 <div class="swiper-wrapper">";i:5;s:679:"<div class="swiper-slide" style="{KARTINKA_DLYA_FONA_2}{TCVET_FONA_SLAJDA_3}">
 <div class="content-wrapper">
 <div class="wrapper-middle"><div class="outer-wrapper"><div class="table-wrapper"><div class="table-cell-wrapper">
