@@ -246,12 +246,45 @@ footer {
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
+  background-attachment: fixed;
   background-image: url('/assets/img/big/2.jpg');
   overflow: hidden;
 }
 
 #sales{
-  padding: @gap-big 0;
   background-color: @c-main;
+  background-image: url('../picto/hot.svg');
+  background-size: contain;
+  background-position: bottom center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+#calc{
+  position: fixed;
+  bottom: @gap-base;
+  right: @gap-base;
+  z-index:10000;
+  .btn{
+  font-family: @f-main;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 0px rgba(0,0,0,0.15);
+  color:@gray-darker;
+  i{margin-right: 5px;}
+  padding:15px 30px;
+  }
+}
+
+.navbar{
+  li [class*='icon-']{
+    color:#fff;
+    margin-left:2px;
+  }
+  li.open{
+    [class*='icon-']{
+      color:@gray-light;
+    }
+  }
 }
 

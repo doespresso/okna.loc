@@ -15,7 +15,7 @@
 // Идентификатор страницы
 if (!defined('SB_PAGE_ID'))
 {
-	define ('SB_PAGE_ID', 8);
+	define ('SB_PAGE_ID', 14);
 }
 
 // Content-Type страницы
@@ -66,10 +66,10 @@ require_once '/Users/jd/servers/LOCALHOST/okna.loc/public/cms/kernel/prog/demo.i
             </div>
           </li>
           <li>
-<div class="btn-group">
-<button href="#menu" type="button" class="btn btn-dark navbar-btn"><b>ПЕРЕЗВОНИТЬ</b></button>
-<button href="#menu" type="button" class="btn btn-default navbar-btn"><b>РАССЧИТАТЬ</b></button>
-</div>
+
+<button href="#menu" type="button" class="btn btn-dark navbar-btn"><i class="icon-spin"></i> <b>ПЕРЕЗВОНИТЬ</b></button>
+<button href="#menu" type="button" class="btn btn-default navbar-btn hidden"><b>РАССЧИТАТЬ</b></button>
+
           </li>
         </ul>
 
@@ -77,11 +77,11 @@ require_once '/Users/jd/servers/LOCALHOST/okna.loc/public/cms/kernel/prog/demo.i
 
 </div>
 </nav>
-<?php include_once SB_CMS_PL_PATH.'/pl_plugin_maker/prog/pl_plugin_maker.php';
+<div class="header-slider dia-fromdown"><?php include_once SB_CMS_PL_PATH.'/pl_plugin_maker/prog/pl_plugin_maker.php';
 
-        fPlugin_Maker_Elem_List('-1', '2', 'a:37:{s:3:\"ids\";s:2:\"24\";s:7:\"temp_id\";s:1:\"2\";s:6:\"filter\";s:3:\"all\";s:5:\"sort1\";s:8:\"p.p_sort\";s:5:\"sort2\";s:0:\"\";s:5:\"sort3\";s:0:\"\";s:6:\"order1\";s:4:\"DESC\";s:6:\"order2\";s:4:\"DESC\";s:6:\"order3\";s:4:\"DESC\";s:4:\"page\";s:0:\"\";s:9:\"auth_page\";s:0:\"\";s:9:\"edit_page\";s:0:\"\";s:9:\"subcategs\";s:1:\"1\";s:11:\"show_hidden\";s:1:\"0\";s:13:\"show_selected\";s:1:\"0\";s:10:\"rubrikator\";s:1:\"0\";s:5:\"pm_id\";s:1:\"1\";s:5:\"cloud\";s:1:\"0\";s:10:\"cloud_comp\";s:1:\"0\";s:8:\"calendar\";s:1:\"0\";s:14:\"calendar_field\";s:0:\"\";s:15:\"registred_users\";s:1:\"0\";s:25:\"registred_users_edit_link\";s:1:\"0\";s:16:\"use_id_el_filter\";s:1:\"0\";s:10:\"use_filter\";s:1:\"0\";s:12:\"filter_logic\";s:3:\"AND\";s:17:\"filter_text_logic\";s:3:\"AND\";s:14:\"filter_compare\";s:2:\"IN\";s:12:\"filter_morph\";s:1:\"0\";s:12:\"allow_bbcode\";s:1:\"0\";s:8:\"use_sort\";s:1:\"1\";s:8:\"moderate\";s:1:\"0\";s:14:\"moderate_email\";s:0:\"\";s:19:\"use_component_cache\";s:1:\"0\";s:13:\"cache_not_url\";s:1:\"0\";s:13:\"cache_not_get\";s:1:\"0\";s:18:\"cache_not_get_list\";s:0:\"\";}', '1');
+        fPlugin_Maker_Elem_List('-1', '2', 'a:37:{s:3:\"ids\";s:2:\"24\";s:7:\"temp_id\";s:1:\"2\";s:6:\"filter\";s:3:\"all\";s:5:\"sort1\";s:8:\"p.p_sort\";s:5:\"sort2\";s:0:\"\";s:5:\"sort3\";s:0:\"\";s:6:\"order1\";s:3:\"ASC\";s:6:\"order2\";s:4:\"DESC\";s:6:\"order3\";s:4:\"DESC\";s:4:\"page\";s:0:\"\";s:9:\"auth_page\";s:0:\"\";s:9:\"edit_page\";s:0:\"\";s:9:\"subcategs\";s:1:\"1\";s:11:\"show_hidden\";s:1:\"0\";s:13:\"show_selected\";s:1:\"0\";s:10:\"rubrikator\";s:1:\"0\";s:5:\"pm_id\";s:1:\"1\";s:5:\"cloud\";s:1:\"0\";s:10:\"cloud_comp\";s:1:\"0\";s:8:\"calendar\";s:1:\"0\";s:14:\"calendar_field\";s:0:\"\";s:15:\"registred_users\";s:1:\"0\";s:25:\"registred_users_edit_link\";s:1:\"0\";s:16:\"use_id_el_filter\";s:1:\"0\";s:10:\"use_filter\";s:1:\"0\";s:12:\"filter_logic\";s:3:\"AND\";s:17:\"filter_text_logic\";s:3:\"AND\";s:14:\"filter_compare\";s:2:\"IN\";s:12:\"filter_morph\";s:1:\"0\";s:12:\"allow_bbcode\";s:1:\"0\";s:8:\"use_sort\";s:1:\"1\";s:8:\"moderate\";s:1:\"0\";s:14:\"moderate_email\";s:0:\"\";s:19:\"use_component_cache\";s:1:\"0\";s:13:\"cache_not_url\";s:1:\"0\";s:13:\"cache_not_get\";s:1:\"0\";s:18:\"cache_not_get_list\";s:0:\"\";}', '1');
 
-        ?>
+        ?></div>
 <div class="header-image"></div>
 </header>
 <section id="calculator">calc</div>
@@ -98,11 +98,11 @@ require_once '/Users/jd/servers/LOCALHOST/okna.loc/public/cms/kernel/prog/demo.i
     </div>
   </div>
 </section>
-
-<section id="sales" class="dia-toup dia-fromdown">
+<h5>С нами выгодно</h5>
+<section id="sales" class="dia-toup dia-todown">
 <?php include_once SB_CMS_PL_PATH.'/pl_news/prog/pl_news.php';
 
-        fNews_Elem_List('-1', '4', 'a:35:{s:3:\"ids\";s:2:\"15\";s:7:\"temp_id\";s:1:\"4\";s:6:\"filter\";s:3:\"all\";s:5:\"sort1\";s:8:\"n.n_date\";s:5:\"sort2\";s:0:\"\";s:5:\"sort3\";s:0:\"\";s:6:\"order1\";s:4:\"DESC\";s:6:\"order2\";s:4:\"DESC\";s:6:\"order3\";s:4:\"DESC\";s:12:\"allow_bbcode\";s:1:\"0\";s:8:\"use_sort\";s:1:\"0\";s:4:\"page\";s:24:\"http://okna.loc/news.php\";s:9:\"auth_page\";s:0:\"\";s:9:\"edit_page\";s:0:\"\";s:9:\"subcategs\";s:1:\"1\";s:11:\"show_hidden\";s:1:\"0\";s:13:\"show_selected\";s:1:\"0\";s:10:\"rubrikator\";s:1:\"1\";s:5:\"cloud\";s:1:\"0\";s:10:\"cloud_comp\";s:1:\"0\";s:8:\"calendar\";s:1:\"0\";s:14:\"calendar_field\";s:6:\"n_date\";s:15:\"registred_users\";s:1:\"0\";s:10:\"use_filter\";s:1:\"0\";s:12:\"filter_logic\";s:3:\"AND\";s:17:\"filter_text_logic\";s:3:\"AND\";s:14:\"filter_compare\";s:2:\"IN\";s:12:\"filter_morph\";s:1:\"0\";s:25:\"registred_users_edit_link\";s:1:\"1\";s:8:\"moderate\";s:1:\"0\";s:14:\"moderate_email\";s:0:\"\";s:19:\"use_component_cache\";s:1:\"0\";s:13:\"cache_not_url\";s:1:\"0\";s:13:\"cache_not_get\";s:1:\"0\";s:18:\"cache_not_get_list\";s:0:\"\";}', '13');
+        fNews_Elem_List('-1', '4', 'a:35:{s:3:\"ids\";s:2:\"15\";s:7:\"temp_id\";s:1:\"4\";s:6:\"filter\";s:3:\"all\";s:5:\"sort1\";s:8:\"n.n_sort\";s:5:\"sort2\";s:8:\"n.n_date\";s:5:\"sort3\";s:0:\"\";s:6:\"order1\";s:4:\"DESC\";s:6:\"order2\";s:4:\"DESC\";s:6:\"order3\";s:4:\"DESC\";s:12:\"allow_bbcode\";s:1:\"0\";s:8:\"use_sort\";s:1:\"0\";s:4:\"page\";s:24:\"http://okna.loc/news.php\";s:9:\"auth_page\";s:0:\"\";s:9:\"edit_page\";s:0:\"\";s:9:\"subcategs\";s:1:\"1\";s:11:\"show_hidden\";s:1:\"0\";s:13:\"show_selected\";s:1:\"0\";s:10:\"rubrikator\";s:1:\"1\";s:5:\"cloud\";s:1:\"0\";s:10:\"cloud_comp\";s:1:\"0\";s:8:\"calendar\";s:1:\"0\";s:14:\"calendar_field\";s:6:\"n_date\";s:15:\"registred_users\";s:1:\"0\";s:10:\"use_filter\";s:1:\"0\";s:12:\"filter_logic\";s:3:\"AND\";s:17:\"filter_text_logic\";s:3:\"AND\";s:14:\"filter_compare\";s:2:\"IN\";s:12:\"filter_morph\";s:1:\"0\";s:25:\"registred_users_edit_link\";s:1:\"1\";s:8:\"moderate\";s:1:\"0\";s:14:\"moderate_email\";s:0:\"\";s:19:\"use_component_cache\";s:1:\"0\";s:13:\"cache_not_url\";s:1:\"0\";s:13:\"cache_not_get\";s:1:\"0\";s:18:\"cache_not_get_list\";s:0:\"\";}', '13');
 
         ?>
 </section>
@@ -117,6 +117,7 @@ require_once '/Users/jd/servers/LOCALHOST/okna.loc/public/cms/kernel/prog/demo.i
 </section>
 
 <section id="content-scroll">
+<h5>Новости и события</h5>
 <?php include_once SB_CMS_PL_PATH.'/pl_news/prog/pl_news.php';
 
         fNews_Elem_List('-1', '3', 'a:35:{s:3:\"ids\";s:2:\"14\";s:7:\"temp_id\";s:1:\"3\";s:6:\"filter\";s:3:\"all\";s:5:\"sort1\";s:6:\"RAND()\";s:5:\"sort2\";s:0:\"\";s:5:\"sort3\";s:0:\"\";s:6:\"order1\";s:0:\"\";s:6:\"order2\";s:4:\"DESC\";s:6:\"order3\";s:4:\"DESC\";s:12:\"allow_bbcode\";s:1:\"0\";s:8:\"use_sort\";s:1:\"0\";s:4:\"page\";s:24:\"http://okna.loc/show.php\";s:9:\"auth_page\";s:0:\"\";s:9:\"edit_page\";s:0:\"\";s:9:\"subcategs\";s:1:\"1\";s:11:\"show_hidden\";s:1:\"0\";s:13:\"show_selected\";s:1:\"0\";s:10:\"rubrikator\";s:1:\"1\";s:5:\"cloud\";s:1:\"0\";s:10:\"cloud_comp\";s:1:\"0\";s:8:\"calendar\";s:1:\"0\";s:14:\"calendar_field\";s:6:\"n_date\";s:15:\"registred_users\";s:1:\"0\";s:10:\"use_filter\";s:1:\"0\";s:12:\"filter_logic\";s:3:\"AND\";s:17:\"filter_text_logic\";s:3:\"AND\";s:14:\"filter_compare\";s:2:\"IN\";s:12:\"filter_morph\";s:1:\"0\";s:25:\"registred_users_edit_link\";s:1:\"1\";s:8:\"moderate\";s:1:\"0\";s:14:\"moderate_email\";s:0:\"\";s:19:\"use_component_cache\";s:1:\"0\";s:13:\"cache_not_url\";s:1:\"0\";s:13:\"cache_not_get\";s:1:\"0\";s:18:\"cache_not_get_list\";s:0:\"\";}', '10');
@@ -124,7 +125,7 @@ require_once '/Users/jd/servers/LOCALHOST/okna.loc/public/cms/kernel/prog/demo.i
         ?>
 </section>
 
-<footer class="dia-fromup">
+<footer class="dia-toup">
   <div class="wrapper">
     <div class="container">
       <div class="row">
@@ -158,7 +159,7 @@ require_once '/Users/jd/servers/LOCALHOST/okna.loc/public/cms/kernel/prog/demo.i
 <div class="col-md-3 col-sm-4">
 <ul>
 <li><tel>+7 495 778 77 88</tel></li>
-<li>БЕЗ ВЫХОДНЫХ</li>
+<li></li>
 <li><address>Москва, ул. Полянка, д.6 стр 4 офис 102</address></li>
 <li></li>
 </ul>
@@ -171,7 +172,7 @@ require_once '/Users/jd/servers/LOCALHOST/okna.loc/public/cms/kernel/prog/demo.i
     </div>
   </div>
 </footer>
-
+<figure id="calc" class="animated bounce"><button class="btn btn-lg btn-success"><i class="icon-win_calc_main"></i> рассчитать стоимость</button></div>
 </div>
 </body>
 </html><?php if (!isset($sb_no_footer) || !$sb_no_footer) require_once SB_PROG_KERNEL_PATH.'/footer.inc.php'; ?>

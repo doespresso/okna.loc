@@ -858,15 +858,15 @@ paceOptions = {
     elements:false,
     restartOnRequestAfter:false
 }
-yepnope.injectCss(['http://oknadvor.com/dev/component/switchery/switchery.css']);
-yepnope.injectCss(['http://oknadvor.com/dev/component/jQuery.mmenu/src/css/jquery.mmenu.all.css']);
+//yepnope.injectCss(['http://oknadvor.com/dev/component/switchery/switchery.css']);
+//yepnope.injectCss(['http://oknadvor.com/dev/component/jQuery.mmenu/src/css/jquery.mmenu.all.css']);
 yepnope.injectCss(['http://oknadvor.com/dev/component/magnific-popup/dist/magnific-popup.css']);
 yepnope([
     {
         load:{
             'pace':'http://oknadvor.com/assets/js/vendor/pace/pace.min.js',
             'jquery':'http://oknadvor.com/assets/js/vendor/jquery/jquery.min.js',
-//            'underscore':'http://oknadvor.com/assets/js/vendor/underscore/underscore.min.js',
+            'underscore':'http://oknadvor.com/assets/js/vendor/underscore/underscore.min.js',
 //            'backbone':'http://oknadvor.com/assets/js/vendor/backbone/backbone.min.js',
 //            'marionette':'http://oknadvor.com/assets/js/vendor/backbone/marionette.min.js',
             'bootstrap':'http://oknadvor.com/assets/js/vendor/bootstrap/bootstrap.min.js',
@@ -924,25 +924,45 @@ yepnope([
                 console.log("swiper");
                 var swipers = Array();
                 $('.swiper-promo').each(function (index) {
-                    var sid = $(this).attr("id");
-                    var s_pagination = '#slider-id-'+sid+'-pagination';
-                    var at = this.attributes;
-                    console.log(at);
-                    var arr = [];
-                    for (var key in at) {
-                        var aname = at[key].nodeName;
-                        console.log(aname);
-                  			if ((aname != undefined) && (aname.indexOf('attr-') == 0)) {
-                  				arr.push(at[key].name + ' = ' + at[key].value);
-                  			}
-                  		}
-                    console.log(arr);
-                    swipers[index] = $(this).swiper({
-                        pagination:s_pagination
+                    var s_pagination = '#slider-id-' + $(this).attr("id") + '-pagination';
+                    var s_next = '#slider-id-' + $(this).attr("id") + '-next';
+                    var s_prev = '#slider-id-' + $(this).attr("id") + '-prev';
+                    var attrs = [];
+                    for (var at in this.attributes) {
+                        if ((this.attributes[at].name != undefined) && (this.attributes[at].value != undefined) && (this.attributes[at].name.indexOf("data-attr-") == 0)) {
+//                        console.log("attr",this.attributes[at].value,this.attributes[at].name);
+                            attrs[this.attributes[at].name.substring(10)] = this.attributes[at].value;
+                        }
+                    }
+                    console.log(attrs);
+
+                    var defaults = {
+                        pagination:s_pagination,
+                        paginationClickable:true,
+                        autoplay: "5000",
+                        loop:true,
+                        watchActiveIndex:true,
+                        mode:'horizontal',
+                    };
+
+                    console.log(_.extend({}, attrs));
+
+                    var options  = _.extend(defaults, attrs);
+                    console.log(options);
+                    swipers[index] = $(this).swiper(options);
+
+                    $(s_next).on('click', function (e) {
+                        e.preventDefault()
+                        swipers[index].swipePrev()
                     });
-//                    swipers[index].
+                    $(s_prev).on('click', function (e) {
+                        e.preventDefault()
+                        swipers[index].swipeNext()
+                    });
+
+
                 });
-console.log(swipers);
+
 
 //                var fullslider = $('.swiper-full').swiper({
 //                    watchActiveIndex:true,
@@ -984,43 +1004,43 @@ console.log(swipers);
 //                    promoslider.swipeNext()
 //                });
 
-//                var salesslider = new Swiper('.swiper-for-banners', {
-//                    watchActiveIndex:true,
-//                    speed:1500,
-//                    loop:true,
-//                    mode:'horizontal',
-//                    calculateHeight:true,
-//                    mousewheelControl:true,
-//                    keyboardControl:true,
-//                    paginationClickable:true,
-//                    pagination:'#sales-pagination',
-//                    autoplay:3000,
-//                });
-//                $('#sales-prev').on('click', function (e) {
-//                    e.preventDefault()
-//                    salesslider.swipePrev()
-//                });
-//                $('#sales-next').on('click', function (e) {
-//                    e.preventDefault()
-//                    salesslider.swipeNext()
-//                });
+                var salesslider = new Swiper('.swiper-for-banners', {
+                    watchActiveIndex:true,
+                    speed:1500,
+                    loop:true,
+                    mode:'horizontal',
+                    calculateHeight:true,
+                    mousewheelControl:false,
+                    keyboardControl:true,
+                    paginationClickable:true,
+                    pagination:'#sales-pagination',
+                    autoplay:3000,
+                });
+                $('#sales-prev').on('click', function (e) {
+                    e.preventDefault()
+                    salesslider.swipePrev()
+                });
+                $('#sales-next').on('click', function (e) {
+                    e.preventDefault()
+                    salesslider.swipeNext()
+                });
 
-//                var news_scroll = new Swiper('.news-list-scroll-hor', {
-//                    pagination:'#news-pagination',
-//                    paginationClickable:true,
+                var news_scroll = new Swiper('.news-list-scroll-hor', {
+                    pagination:'#news-pagination',
+                    paginationClickable:true,
 //                    calculateHeight:true,
-//                    slidesPerView:'auto',
-//                    loop:true
-//                });
-//
-//                $('#news-prev').on('click', function (e) {
-//                    e.preventDefault()
-//                    news_scroll.swipePrev()
-//                });
-//                $('#news-next').on('click', function (e) {
-//                    e.preventDefault()
-//                    news_scroll.swipeNext()
-//                });
+                    slidesPerView:'auto',
+                    loop:true
+                });
+
+                $('#news-prev').on('click', function (e) {
+                    e.preventDefault()
+                    news_scroll.swipePrev()
+                });
+                $('#news-next').on('click', function (e) {
+                    e.preventDefault()
+                    news_scroll.swipeNext()
+                });
 
 
             },

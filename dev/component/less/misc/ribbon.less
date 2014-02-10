@@ -138,7 +138,7 @@ padding:(@radius - @font-size)/2 0;
   margin-right:auto;
 
 .sale-wrapper{
-  border:@border-style @border-width @border-color;
+//  border:@border-style @border-width @border-color;
   overflow: hidden;
   width:@size;
   height:@size;
@@ -231,6 +231,17 @@ padding:(@radius - @font-size)/2 0;
     padding: 0 @size/10;
   }
 }
+&.dash-bordered{
+  .sale-wrapper{
+    border:@border-style @border-width @border-color;
+    .title{
+
+    }
+  .desc{
+    color:@gray-darker;
+  }
+  }
+}
 }
 
 .sale-banners-home {
@@ -241,7 +252,7 @@ padding:(@radius - @font-size)/2 0;
       font-size: 14px !important;
     }
     @media (min-width: @screen-phone) {
-      #sale(@size: 460px; @bg: @c-main; @color: #fff; @desc-color: #fff; @border-color: @gray-darker; @border-width: 3px; @border-style: dashed;);
+      #sale(@size: 400px; @bg: @c-main; @color: #fff; @desc-color: #fff; @border-color: @gray-darker; @border-width: 3px; @border-style: dashed;);
       .desc {
         font-size: 22px !important;
         font-family: @f-main;
