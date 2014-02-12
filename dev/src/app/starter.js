@@ -5,7 +5,7 @@ paceOptions = {
 }
 //yepnope.injectCss(['http://oknadvor.com/dev/component/switchery/switchery.css']);
 //yepnope.injectCss(['http://oknadvor.com/dev/component/jQuery.mmenu/src/css/jquery.mmenu.all.css']);
-yepnope.injectCss(['http://oknadvor.com/dev/component/magnific-popup/dist/magnific-popup.css']);
+//yepnope.injectCss(['http://oknadvor.com/dev/component/magnific-popup/dist/magnific-popup.css']);
 yepnope([
     {
         load:{
@@ -17,9 +17,9 @@ yepnope([
             'bootstrap':'http://oknadvor.com/assets/js/vendor/bootstrap/bootstrap.min.js',
             'swiper':'http://oknadvor.com/assets/js/vendor/swiper/swiper.min.js',
 //            'swiper_progress':'http://oknadvor.com/assets/js/vendor/swiper/swiper_progress.min.js',
-            'switchery':'http://oknadvor.com/assets/js/vendor/switchery/switchery.min.js',
-            'mmenu':'http://oknadvor.com/dev/component/jQuery.mmenu/src/js/jquery.mmenu.min.all.js',
-            'lightbox':'http://oknadvor.com/dev/component/magnific-popup/dist/jquery.magnific-popup.min.js',
+//            'switchery':'http://oknadvor.com/assets/js/vendor/switchery/switchery.min.js',
+//            'mmenu':'http://oknadvor.com/dev/component/jQuery.mmenu/src/js/jquery.mmenu.min.all.js',
+//            'lightbox':'http://oknadvor.com/dev/component/magnific-popup/dist/jquery.magnific-popup.min.js',
 //            'calc':'http://oknadvor.com/assets/js/app/calc.js',
         },
         callback:{
@@ -29,41 +29,41 @@ yepnope([
             'jquery':function (url, result, key) {
                 console.log("jquery loaded");
             },
-            'switchery':function (url, result, key) {
-                console.log("switch");
-                var swelem = document.querySelector('#switcher1');
-                var switcher = new Switchery(swelem);
-            },
-            'lightbox':function (url, result, key) {
-                console.log("lightbox");
-                $('.gallery').magnificPopup({
-                    delegate:'a',
-                    type:'image',
-                    gallery:{
-                        enabled:true,
-                        preload:[0, 2],
-                        navigateByImgClick:true,
-                        arrowMarkup:'<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>', // markup of an arrow button
-                        tPrev:'назад', // title for left button
-                        tNext:'вперед', // title for right button
-                        tCounter:'<span>%curr% из %total%</span>' // markup of counter
-                    },
-                    image:{
-                        titleSrc:'title'
-                    },
-                    mainClass:'mfp-fade',
-                    removalDelay:300,
-                });
-            },
-            'mmenu':function (url, result, key) {
-                console.log("menu");
-                $('#menu').mmenu({
-                    position:"left",
-                    zposition:"back",
-                    searchfield:true,
-                    counters:true
-                });
-            },
+//            'switchery':function (url, result, key) {
+//                console.log("switch");
+//                var swelem = document.querySelector('#switcher1');
+//                var switcher = new Switchery(swelem);
+//            },
+//            'lightbox':function (url, result, key) {
+//                console.log("lightbox");
+//                $('.gallery').magnificPopup({
+//                    delegate:'a',
+//                    type:'image',
+//                    gallery:{
+//                        enabled:true,
+//                        preload:[0, 2],
+//                        navigateByImgClick:true,
+//                        arrowMarkup:'<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>', // markup of an arrow button
+//                        tPrev:'назад', // title for left button
+//                        tNext:'вперед', // title for right button
+//                        tCounter:'<span>%curr% из %total%</span>' // markup of counter
+//                    },
+//                    image:{
+//                        titleSrc:'title'
+//                    },
+//                    mainClass:'mfp-fade',
+//                    removalDelay:300,
+//                });
+//            },
+//            'mmenu':function (url, result, key) {
+//                console.log("menu");
+//                $('#menu').mmenu({
+//                    position:"left",
+//                    zposition:"back",
+//                    searchfield:true,
+//                    counters:true
+//                });
+//            },
             'swiper':function () {
                 "use strict";
                 console.log("swiper");
