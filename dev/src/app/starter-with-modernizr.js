@@ -854,13 +854,14 @@ window.Modernizr = (function( window, document, undefined ) {
 Modernizr.load=function(){yepnope.apply(window,[].slice.call(arguments,0));};
 ;
 console.log("init");
-paceOptions = {
-    elements:false,
-    restartOnRequestAfter:false
-}
+//paceOptions = {
+//    ajax:true,
+//    restartOnRequestAfter:true,
+//    restartOnPushState: true
+//}
 //yepnope.injectCss(['http://oknadvor.com/dev/component/switchery/switchery.css']);
 //yepnope.injectCss(['http://oknadvor.com/dev/component/jQuery.mmenu/src/css/jquery.mmenu.all.css']);
-//yepnope.injectCss(['http://oknadvor.com/dev/component/magnific-popup/dist/magnific-popup.css']);
+yepnope.injectCss(['http://oknadvor.com/dev/component/magnific-popup/dist/magnific-popup.css']);
 yepnope([
     {
         load:{
@@ -874,7 +875,7 @@ yepnope([
 //            'swiper_progress':'http://oknadvor.com/assets/js/vendor/swiper/swiper_progress.min.js',
 //            'switchery':'http://oknadvor.com/assets/js/vendor/switchery/switchery.min.js',
 //            'mmenu':'http://oknadvor.com/dev/component/jQuery.mmenu/src/js/jquery.mmenu.min.all.js',
-//            'lightbox':'http://oknadvor.com/dev/component/magnific-popup/dist/jquery.magnific-popup.min.js',
+            'lightbox':'http://oknadvor.com/dev/component/magnific-popup/dist/jquery.magnific-popup.min.js',
 //            'calc':'http://oknadvor.com/assets/js/app/calc.js',
         },
         callback:{
@@ -883,33 +884,76 @@ yepnope([
             },
             'jquery':function (url, result, key) {
                 console.log("jquery loaded");
+                $(document).ready(function(){
+                    console.log("ready");
+                    $(".show-callback").on("click",function(e){
+                        e.preventDefault();
+                        $("#callback-panel").fadeToggle(300);
+                    });
+                    $("#callback-form #my_tel").on("focus",function(){
+                        console.log("focus");
+                        $(this).removeClass("animated bounce");
+                    });
+                    $("#callback-form").on("submit",function(e){
+                        e.preventDefault();
+                        var form = $(this);
+                        var ftel = form.find("#my_tel");
+                        var tel = ftel.val();
+                        if (tel.length<9) {
+                            console.log(tel,"wrong");
+                            ftel.addClass("animated bounce");
+                        } else {
+                        $.ajax({
+                          type: "POST",
+                          data: form.serialize(),
+//                          dataType: "html",
+                          url: form.attr("action"),
+                          beforeSend: function() {
+//                              $("#callback-panel .overlay").fadeIn();
+                          },
+                          success: function(response) {
+//                              $("#callback-panel .overlay").fadeOut();
+                              console.log("sent");
+                              console.log(response);
+                              if (response==''){
+                                  console.log("ok");
+                                  form.html("sent");
+                              }
+                          },
+                        });
+                    }
+                    });
+                });
+            },
+            'bootstrap':function (url, result, key) {
+                console.log("bootstrap");
             },
 //            'switchery':function (url, result, key) {
 //                console.log("switch");
 //                var swelem = document.querySelector('#switcher1');
 //                var switcher = new Switchery(swelem);
 //            },
-//            'lightbox':function (url, result, key) {
-//                console.log("lightbox");
-//                $('.gallery').magnificPopup({
-//                    delegate:'a',
-//                    type:'image',
-//                    gallery:{
-//                        enabled:true,
-//                        preload:[0, 2],
-//                        navigateByImgClick:true,
-//                        arrowMarkup:'<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>', // markup of an arrow button
-//                        tPrev:'назад', // title for left button
-//                        tNext:'вперед', // title for right button
-//                        tCounter:'<span>%curr% из %total%</span>' // markup of counter
-//                    },
-//                    image:{
-//                        titleSrc:'title'
-//                    },
-//                    mainClass:'mfp-fade',
-//                    removalDelay:300,
-//                });
-//            },
+            'lightbox':function (url, result, key) {
+                console.log("lightbox");
+                $('.gallery').magnificPopup({
+                    delegate:'a',
+                    type:'image',
+                    gallery:{
+                        enabled:true,
+                        preload:[0, 2],
+                        navigateByImgClick:true,
+                        arrowMarkup:'<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>', // markup of an arrow button
+                        tPrev:'назад', // title for left button
+                        tNext:'вперед', // title for right button
+                        tCounter:'<span>%curr% из %total%</span>' // markup of counter
+                    },
+                    image:{
+                        titleSrc:'title'
+                    },
+                    mainClass:'mfp-fade',
+                    removalDelay:300,
+                });
+            },
 //            'mmenu':function (url, result, key) {
 //                console.log("menu");
 //                $('#menu').mmenu({

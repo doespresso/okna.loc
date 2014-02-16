@@ -127,7 +127,7 @@ output {
   background-color: @input-bg;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border:none;
-  border-bottom: 2px solid @input-border;
+  border-bottom: 2px solid transparent;//@input-border;
   border-radius: @input-border-radius;
   .box-shadow(inset 1px 1px 1px rgba(0,0,0,.075));
   .transition(~"border-color ease-in-out .15s, box-shadow ease-in-out .15s");
@@ -237,7 +237,7 @@ input[type="checkbox"],
 }
 
 .input-lg {
-  .input-size(@input-height-large; @padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
+  .input-size(@input-height-large - 1px; @padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
 }
 
 
