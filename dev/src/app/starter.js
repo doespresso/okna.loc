@@ -1,9 +1,9 @@
 console.log("init");
-//paceOptions = {
-//    ajax:true,
-//    restartOnRequestAfter:true,
-//    restartOnPushState: true
-//}
+paceOptions = {
+    ajax:true,
+    restartOnRequestAfter:true,
+    restartOnPushState: true
+}
 //yepnope.injectCss(['http://oknadvor.com/dev/component/switchery/switchery.css']);
 //yepnope.injectCss(['http://oknadvor.com/dev/component/jQuery.mmenu/src/css/jquery.mmenu.all.css']);
 yepnope.injectCss(['http://oknadvor.com/dev/component/magnific-popup/dist/magnific-popup.css']);
@@ -54,15 +54,18 @@ yepnope([
 //                          dataType: "html",
                           url: form.attr("action"),
                           beforeSend: function() {
-//                              $("#callback-panel .overlay").fadeIn();
+                              $("#callback-panel .overlay").fadeIn();
                           },
                           success: function(response) {
-//                              $("#callback-panel .overlay").fadeOut();
+                              $("#callback-panel .overlay").fadeOut();
                               console.log("sent");
                               console.log(response);
                               if (response==''){
-                                  console.log("ok");
-                                  form.html("sent");
+                                  $("#callback-panel #result").html("Спасибо!<br/>Мы перезвоним Вам на номер <b>"+tel+"</b>.");
+                                  $("#callback-panel").addClass("done").delay(3000).fadeOut(2000,function(){
+                                      $(this).removeClass("done");
+                                      $("#callback-form #my_tel").val("");
+                                  });
                               }
                           },
                         });
